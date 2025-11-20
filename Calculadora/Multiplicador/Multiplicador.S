@@ -8,8 +8,8 @@
 .section .text
 .globl mult_hw
 
-## li a0, 122
-## li a1, 4
+## li a0, 122  se comenta despues de probar el archivo en gtkwave
+## li a1, 4    se comenta despues de probar el archivo en gtkwave
 
 mult_hw:
   li   gp, MULT_BASE 
