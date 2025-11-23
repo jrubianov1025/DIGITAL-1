@@ -2,7 +2,7 @@
 
 ## Descripción de los módulos
 
-En la carpeta se encuentran 4 carpetas para cada periférico. En su interior, cada carpeta posee los módulos necesarios para su correcto funcionamiento, un módulo TOP y un testbench para su simulación. Además, se encuentran 4 archivos adicionales necesarios para el funcionamiento de la calculadora.
+En la carpeta se encuentran 4 carpetas para cada periférico. En su interior, cada carpeta posee los módulos necesarios para su correcto funcionamiento, un módulo TOP y un testbench para su simulación. Además, se encuentran los diagramas de bloques utilizados para el diseño de cada uno de los módulos y 4 archivos adicionales necesarios para el funcionamiento de la calculadora.
 
 ---
 
