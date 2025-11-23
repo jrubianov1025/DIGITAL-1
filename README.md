@@ -5,29 +5,19 @@ Incluye implementaciones estructurales, periféricos y testbench para validació
 
 ---
 
-## Estructura del proyecto
+## Estructura del Repositorio
 
-- [Calculadora](./Calculadora/) — Carpeta que contiene los 4 módulos principales realizados durante las sesiones de clase:
+- [Calculadora](./Calculadora/) — Carpeta que contiene los 4 perifericos principales realizados durante las sesiones de clase, cada periferico posee su propia carpeta:
+ 
   - Multiplicador  
   - Divisor  
   - Raíz cuadrada  
   - Binario a BCD
+
+- [Proyecto principal](./Calculadora/) — Carpeta que contiene los perifericos desarrollados como proyecto principal de la asignatura:
+
+  - 3 bits por pixel
+  - 12 bits por pixel
+  - reproduccion de video
   
 - `README.md` — Archivo de descripción principal.
-
----
-
-## Descripción de los módulos
-
-### Calculadora
-En la carpeta **Calculadora/** encontrarás la implementación de los módulos en Verilog, así como testbench asociados para su simulación.  
-Los archivos principales son:
-
-- `multiplicador.v` — módulo multiplicador  
-- `divisor.v` — módulo divisor  
-- `raiz_cuadrada.v` — módulo raíz cuadrada  
-- `binario_a_bcd.v` — módulo de conversión binario a BCD  
-- Testbenches correspondientes para cada módulo.
-
----
-
