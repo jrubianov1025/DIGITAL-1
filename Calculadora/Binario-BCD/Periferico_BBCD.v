@@ -6,7 +6,7 @@ module Periferico_BinarioABCD (
   input [5:0] addr,     // dirección del registro (más ancha para 0x1C)
   input rd,             // lectura
   input wr,             // escritura
-  output reg [15:0] d_out // salida hacia el bus (extendida a 32 bits)
+  output reg [15:0] d_out // salida hacia el bus 
 );
 
 
