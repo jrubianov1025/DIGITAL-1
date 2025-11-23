@@ -203,4 +203,61 @@ El testbench posee un numero predeterminado de prueba que puede ser cambiado; se
 
 ### Binario a BCD
 
+Este módulo convierte un número binario de 16 bits a su representación en BCD (Binary-Coded Decimal) empleando típicamente el algoritmo Double Dabble (Shift-and-Add-3). funciona principalmente con el uso de corrimientos concatenados, comparador mediante el uso de un sumador en complemento a dos y una máquina de control que coordina las etapas.
+
+Se describe con mas detalle el funcionamiento del modulo mediante el uso de 3 diagramas, Diagrama de flujo, Datapath y diagrama de estados; a continuacion se anexan estos 3 diagramas.
+
+
+
+
+
+
+A modo de resumen, se especifica en la siguiente tabla las diferentes variables presentes en el diseño.
+
+| Señal      | I/O    | Bits | Descripción                     |
+| --------   | ------ | ---- | ------------------------------- |
+| `Op_A`     | Input  | 16   | binario al cual pasar a bcd     |
+| `INIT`     | Input  | 1    | Inicia la operación             |
+| `CLK`      | Input  | 1    | Señal de reloj                  |
+| `DONE`     | Output | 1    | Indica que la operación terminó |
+| `UNIT`     | Output | 4    | UNIDADES                        |
+| `DEC`      | Output | 4    | DECENAS                         |
+| `CENT`     | Output | 4    | CENTENAS                        |
+| `MIL`      | Output | 4    | MILES                           |
+
+
+Hay 8 archivos dentro de esta carpeta:
+
+- `Divisor.S` — Archivo en Assembler con el objetivo de realizar la comunicación entre el periférico y el procesador.
+
+- `Periferico_DIVISOR.v` — Archivo que instancia el módulo divisor como un periférico de un procesador RISC-V.
+
+- `DIVISOR.v` — Módulo TOP del divisor, el cual declara las variables de entrada y salida del módulo, además de llamar el resto de módulos necesarios.
+
+- `COMPARADOR_DIVISOR.v` —  Comparador para verificar cuántos ciclos restantes quedan de ejecución.
+
+- `CONTADOR_DIVISOR.v` — Contador descendente para llevar un registro de ciclos de ejecución realizados.
+
+- `CONTROL_DIVISOR.v` — Máquina de control del periférico. Genera señales de control para el correcto funcionamiento del periférico (basado en el diagrama de estados).
+
+- `SHIFT_DEC_DIVISOR.v` — Módulo que realiza un corrimiento concatenado para el divisor, con la finalidad de comparar bit a bit con respecto al dividendo y realizar un proceso de división larga.
+
+- `SUMADOR_DIVISOR.v` — Sumador en complemento a dos que realiza la comparación directa de los bits del divisor con el dividendo para validar la operación.
+  
+- `tb_Periferico_DIVISOR.v` — Módulo TESTBENCH para probar el funcionamiento del periférico. Crea un archivo .vcd que puede ser visualizado en GTKWave.
+
+Si se quiere simular, basta con abrir una terminal en la carpeta Divisor y ejecutar el siguiente código:
+
+```
+iverilog -o sim tb_divisor.v SUMADOR_DIVISOR.v SHIFT_DEC_DIVISOR.v Periferico_divisor.v DIVISOR.v CONTROL_DIVISOR.v CONTADOR_DIVISOR.v COMPARADOR_DIVISOR.v 
+vvp sim
+```
+Para visualizar en GTKWave, ejecutar en la terminal:
+
+```
+gtkwave tb_Periferico_DIVISOR.vcd &
+```
+
+El testbench posee dos números predeterminados de prueba que pueden ser cambiados; se encuentran en las líneas 101 y 102 de este mismo archivo.
+
 ---
