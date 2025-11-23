@@ -114,8 +114,9 @@ module tb_Periferico_raiz;
   end
 
 endmodule
+
 /*
  si se quiere simular, pegar esto en consola: 
  iverilog -o sim CONTROL_RAIZ.v COUNT_RAIZ.v LSR_A_RAIZ.v LSR_R_RAIZ.v LSR_TMP_RAIZ.v Periferico_raiz.v RAIZ.v SUM_C2_RAIZ.v tb_Periferico_raiz.v
  vvp sim
-*/
+ */
