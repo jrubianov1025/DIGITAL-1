@@ -36,8 +36,13 @@ Si se quiere simular basta con abrir una terminal en la carpeta Multiplicador y 
 iverilog -o sim testbench.v Periferico_multiplicador.v multiplicador.v acc.v comp.v control_mult.v lsr.v rsr.v
 vvp sim
 ```
+para visualizar en GTKWAVE ejecutar en la terminal:
 
-El testbench posee dos numero predeterminados de prueba que pueden ser cambiados, se encuentra en las lineas 42 y 45 de este mismo.
+```
+gtkwave TB_mult.vcd &
+```
+
+El testbench posee dos numero predeterminados de prueba que pueden ser cambiados, se encuentra en las lineas 47 y 50 de este mismo.
 
 ---
 
