@@ -8,8 +8,8 @@
 .section .text
 .globl div_hw
 
- li a0, 2000
- li a1, 16
+ # li a0, 2000 se comenta despues de probar el archivo en gtkwave
+ # li a1, 16   se comenta despues de probar el archivo en gtkwave
 
 div_hw:
   li   gp, DIV_BASE
