@@ -30,6 +30,11 @@ always #5 clk = ~clk;  // periodo de 10 ns -> 100 MHz
 
 // Procedimiento de prueba
 initial begin
+  // ----------- VCD para GTKWave --------------
+  $dumpfile("TB_mult.vcd");     // Archivo VCD
+  $dumpvars(0, tb_Periferico_multiplicador);  
+  // --------------------------------------------
+
   // Inicialización
   cs = 0; rd = 0; wr = 0;
   d_in = 0; addr = 0;
@@ -38,10 +43,10 @@ initial begin
   reset = 0;
   #10;
 
-  // Escritura de A = 25
+  // Escritura de A =
   write_reg(5'h04, 16'd934);
 
-  // Escritura de B = 12
+  // Escritura de B =
   write_reg(5'h08, 16'd367);
 
   // Escritura de init = 1
@@ -98,7 +103,8 @@ endtask
 
 endmodule
 
-
-// si se quiere simular, pegar esto en consola: 
-// iverilog -o sim testbench.v Periferico_multiplicador.v multiplicador.v acc.v comp.v control_mult.v lsr.v rsr.v
-// vvp sim
+/*
+ si se quiere simular, pegar esto en consola: 
+ iverilog -o sim testbench.v Periferico_multiplicador.v multiplicador.v acc.v comp.v control_mult.v lsr.v rsr.v
+ vvp sim
+*/
