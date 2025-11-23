@@ -1,14 +1,43 @@
+
+## 📘 Descripción de los módulos
+
+En esta carpeta se encuentran 4 carpetas, una para cada periférico.
+Dentro de cada una se incluyen:
+
+- Los módulos necesarios para su funcionamiento
+- Un módulo TOP
+- Un testbench para simulación
+- Archivo en assembler adicional utilizado por la calculadora completa
+
+Además, se encuentran 4 archivos adicionales necesarios para el funcionamiento de la calculadora.
+
 ---
 
-## Descripción de los módulos
+### 🔢 Multiplicador 
 
-En la carpeta se encuentran 4 carpetas para cada periférico. En su interior, cada carpeta posee los módulos necesarios para su correcto funcionamiento, un módulo TOP y un testbench para su simulación. Además, se encuentran los diagramas de bloques utilizados para el diseño de cada uno de los módulos y 4 archivos adicionales necesarios para el funcionamiento de la calculadora.
+El módulo multiplicador implementa un multiplicador secuencial basado en corrimientos y sumas parciales.
+La mayoría de los archivos fueron suministrados como ejemplo por el docente, pero están totalmente integrados como un periférico funcional para un procesador RISC-V.
 
----
+Este módulo toma dos operandos de 16 bits y produce un resultado de 32 bits utilizando un proceso iterativo controlado por una máquina de estados.
 
-### Multiplicador 
+Se describe con mas detalle el funcionamiento del modulo mediante el uso de 3 diagramas, Diagrama de flujo, Datapath y diagrama de estados; a continuacion se anexan estos 3 diagramas.
 
-Este módulo, en su mayoría, corresponde a códigos suministrados por el docente a modo de ejemplo.
+
+
+
+
+
+A modo de resumen, se especifica en la siguiente tabla las diferentes variables presentes en el diseño.
+
+| Señal    | I/O    | Bits | Descripción                     |
+| -------- | ------ | ---- | ------------------------------- |
+| `a`      | Input  | 16   | Multiplicando                   |
+| `b`      | Input  | 16   | Multiplicador                   |
+| `init`   | Input  | 1    | Inicia la operación             |
+| `clk`    | Input  | 1    | Señal de reloj                  |
+| `done`   | Output | 1    | Indica que la operación terminó |
+| `PP`     | Output | 32   | Resultado final                 |
+
 
 Hay 9 archivos dentro de esta carpeta:
 
@@ -46,13 +75,35 @@ El testbench posee dos números predeterminados de prueba que pueden ser cambiad
 
 ---
 
-### Divisor
+### ➗ Divisor
+
+Este módulo implementa una división larga binaria mediante corrimientos concatenados, comparador con el uso de un sumador en complemento a dos y una máquina de control que coordina las etapas.
+
+Se describe con mas detalle el funcionamiento del modulo mediante el uso de 3 diagramas, Diagrama de flujo, Datapath y diagrama de estados; a continuacion se anexan estos 3 diagramas.
+
+
+
+
+
+
+A modo de resumen, se especifica en la siguiente tabla las diferentes variables presentes en el diseño.
+
+| Señal    | I/O    | Bits | Descripción                     |
+| -------- | ------ | ---- | ------------------------------- |
+| `DV`     | Input  | 16   | Dividendo                       |
+| `DR`     | Input  | 16   | Divisor                         |
+| `START`  | Input  | 1    | Inicia la operación             |
+| `CLK`    | Input  | 1    | Señal de reloj                  |
+| `DONE`   | Output | 1    | Indica que la operación terminó |
+| `R`      | Output | 32   | Resultado final                 |
+
+
 
 Hay 9 archivos dentro de esta carpeta:
 
 - `Divisor.S` — Archivo en Assembler con el objetivo de realizar la comunicación entre el periférico y el procesador.
 
-- `Periferico_DIVISOR.v` — AArchivo que instancia el módulo divisor como un periférico de un procesador RISC-V.
+- `Periferico_DIVISOR.v` — Archivo que instancia el módulo divisor como un periférico de un procesador RISC-V.
 
 - `DIVISOR.v` — Módulo TOP del divisor, el cual declara las variables de entrada y salida del módulo, además de llamar el resto de módulos necesarios.
 
@@ -82,9 +133,14 @@ gtkwave tb_Periferico_DIVISOR.vcd &
 
 El testbench posee dos números predeterminados de prueba que pueden ser cambiados; se encuentran en las líneas 101 y 102 de este mismo archivo.
 
+
+
 ---
 
 ### Raiz
+
+
+
 
 ---
 
