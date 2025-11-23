@@ -203,7 +203,7 @@ El testbench posee un numero predeterminado de prueba que puede ser cambiado; se
 
 ### Binario a BCD
 
-Este módulo convierte un número binario de 16 bits a su representación en BCD (Binary-Coded Decimal) empleando típicamente el algoritmo Double Dabble (Shift-and-Add-3). funciona principalmente con el uso de corrimientos concatenados, comparador mediante el uso de un sumador en complemento a dos y una máquina de control que coordina las etapas.
+Este módulo convierte un número binario de 16 bits a su representación en BCD (Binary-Coded Decimal) empleando el algoritmo Double Dabble (Shift-and-Add-3). funciona principalmente con el uso de corrimientos concatenados, comparador mediante el uso de un sumador en complemento a dos y una máquina de control que coordina las etapas.
 
 Se describe con mas detalle el funcionamiento del modulo mediante el uso de 3 diagramas, Diagrama de flujo, Datapath y diagrama de estados; a continuacion se anexan estos 3 diagramas.
 
@@ -228,36 +228,34 @@ A modo de resumen, se especifica en la siguiente tabla las diferentes variables 
 
 Hay 8 archivos dentro de esta carpeta:
 
-- `Divisor.S` — Archivo en Assembler con el objetivo de realizar la comunicación entre el periférico y el procesador.
+- `B_BCD.S` — Archivo en Assembler con el objetivo de realizar la comunicación entre el periférico y el procesador.
 
-- `Periferico_DIVISOR.v` — Archivo que instancia el módulo divisor como un periférico de un procesador RISC-V.
+- `Periferico_BBCD.v` — Archivo que instancia el módulo Binario-BCD como un periférico de un procesador RISC-V.
 
-- `DIVISOR.v` — Módulo TOP del divisor, el cual declara las variables de entrada y salida del módulo, además de llamar el resto de módulos necesarios.
+- `Binario-BCD.v` — Módulo TOP del Binario-BCD, el cual declara las variables de entrada y salida del módulo, además de llamar el resto de módulos necesarios.
 
-- `COMPARADOR_DIVISOR.v` —  Comparador para verificar cuántos ciclos restantes quedan de ejecución.
+- `CONTADOR_BBCD.v` — Contador descendente para llevar un registro de ciclos de ejecución realizados.
 
-- `CONTADOR_DIVISOR.v` — Contador descendente para llevar un registro de ciclos de ejecución realizados.
+- `CONTROL_BBCD.v` — Máquina de control del periférico. Genera señales de control para el correcto funcionamiento del periférico (basado en el diagrama de estados).
 
-- `CONTROL_DIVISOR.v` — Máquina de control del periférico. Genera señales de control para el correcto funcionamiento del periférico (basado en el diagrama de estados).
+- `LSR_BBCD.v` — modulo donde se va contruyendo el nuevo nuemero en BCD, se realizan corrimientos bit a bit y luego se compara el valor con un sumador en complemento a dos.
 
-- `SHIFT_DEC_DIVISOR.v` — Módulo que realiza un corrimiento concatenado para el divisor, con la finalidad de comparar bit a bit con respecto al dividendo y realizar un proceso de división larga.
-
-- `SUMADOR_DIVISOR.v` — Sumador en complemento a dos que realiza la comparación directa de los bits del divisor con el dividendo para validar la operación.
+- `SUM_C2_BBCD.v` —modulo donde se compara el valor de cada secccion del numero con 5 para saber si es mayor, menor o igual, si es mayor o igual en este mismo modulo se le suma 3 al numero actual.
   
-- `tb_Periferico_DIVISOR.v` — Módulo TESTBENCH para probar el funcionamiento del periférico. Crea un archivo .vcd que puede ser visualizado en GTKWave.
+- `testbench.v` — Módulo TESTBENCH para probar el funcionamiento del periférico. Crea un archivo .vcd que puede ser visualizado en GTKWave.
 
 Si se quiere simular, basta con abrir una terminal en la carpeta Divisor y ejecutar el siguiente código:
 
 ```
-iverilog -o sim tb_divisor.v SUMADOR_DIVISOR.v SHIFT_DEC_DIVISOR.v Periferico_divisor.v DIVISOR.v CONTROL_DIVISOR.v CONTADOR_DIVISOR.v COMPARADOR_DIVISOR.v 
-vvp sim
+ iverilog -o sim Binario-BCD.v CONTADOR_BBCD.v CONTROL_BBCD.v LSR_BBCD.v Periferico_BBCD.v SUM_C2_BBCD.v testbench.v
+ vvp sim
 ```
 Para visualizar en GTKWave, ejecutar en la terminal:
 
 ```
-gtkwave tb_Periferico_DIVISOR.vcd &
+gtkwave tb_Periferico_BinarioABCD.vcd &
 ```
 
-El testbench posee dos números predeterminados de prueba que pueden ser cambiados; se encuentran en las líneas 101 y 102 de este mismo archivo.
+El testbench posee un numero predeterminado de prueba que puede ser cambiado; se encuentra en la línea 107 de este mismo archivo.
 
 ---
