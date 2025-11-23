@@ -13,7 +13,7 @@ Además, se encuentran 4 archivos adicionales necesarios para el funcionamiento 
 
 ---
 
-### 🔢 Multiplicador 
+### ✖️ Multiplicador 
 
 El módulo multiplicador implementa un multiplicador secuencial basado en corrimientos y sumas parciales.
 La mayoría de los archivos fueron suministrados como ejemplo por el docente, pero están totalmente integrados como un periférico funcional para un procesador RISC-V.
@@ -95,7 +95,7 @@ A modo de resumen, se especifica en la siguiente tabla las diferentes variables 
 | `START`  | Input  | 1    | Inicia la operación             |
 | `CLK`    | Input  | 1    | Señal de reloj                  |
 | `DONE`   | Output | 1    | Indica que la operación terminó |
-| `R`      | Output | 32   | Resultado final                 |
+| `R`      | Output | 16   | Resultado final                 |
 
 
 
@@ -137,7 +137,64 @@ El testbench posee dos números predeterminados de prueba que pueden ser cambiad
 
 ---
 
-### Raiz
+### ✔️ Raiz
+
+Este módulo implementa la Raiz cuadrada binaria mediante un procedimiento similar a una division larga, utiliza corrimientos, comparador con el uso de un sumador en complemento a dos y una máquina de control que coordina las etapas.
+
+Se describe con mas detalle el funcionamiento del modulo mediante el uso de 3 diagramas, Diagrama de flujo, Datapath y diagrama de estados; a continuacion se anexan estos 3 diagramas.
+
+
+
+
+
+
+A modo de resumen, se especifica en la siguiente tabla las diferentes variables presentes en el diseño.
+
+| Señal      | I/O    | Bits | Descripción                     |
+| --------   | ------ | ---- | ------------------------------- |
+| `Op_A`     | Input  | 16   | Numero del cual obtener su raiz |
+| `INIT`     | Input  | 1    | Inicia la operación             |
+| `CLK`      | Input  | 1    | Señal de reloj                  |
+| `DONE`     | Output | 1    | Indica que la operación terminó |
+| `Resultado`| Output | 16   | Resultado final                 |
+
+
+
+Hay 10 archivos dentro de esta carpeta:
+
+- `Raiz.S` — Archivo en Assembler con el objetivo de realizar la comunicación entre el periférico y el procesador.
+
+- `Periferico_raiz.v` — Archivo que instancia el módulo Raiz como un periférico de un procesador RISC-V.
+
+- `RAIZ.v` — Módulo TOP de la Raiz cuadrada, el cual declara las variables de entrada y salida del módulo, además de llamar el resto de módulos necesarios.
+
+- `CONTROL_RAIZ.v` —   Máquina de control del periférico. Genera señales de control para el correcto funcionamiento del periférico (basado en el diagrama de estados).
+
+- `COUNT_RAIZ.v` — Contador descendente para llevar un registro de ciclos de ejecución realizados.
+
+- `LSR_A_RAIZ.v` — toma el valor original y realiza un desplazamiento de dos bits para realizar la comparacion del numero con el resultado parcial.
+
+- `LSR_R_RAIZ.v` — se va construyendo el resultado mediante un corrimento bit a bit y una señal de control R0.
+ 
+- `LSR_TMP_RAIZ.v` — Registro de almacenamiento temporal del resultado parcial para su posterior uso en el sumador en complemento a dos. 
+
+- `SUM_C2_RAIZ.v` — Sumador en complemento a dos que realiza la comparación directa de la pareja de bits en LSR_A_RAIZ y LSR_TMP_RAIZ concatenado con un uno para validar la operacion.
+ 
+- `tb_Periferico_DIVISOR.v` — Módulo TESTBENCH para probar el funcionamiento del periférico. Crea un archivo .vcd que puede ser visualizado en GTKWave.
+
+Si se quiere simular, basta con abrir una terminal en la carpeta Raiz y ejecutar el siguiente código:
+
+```
+ iverilog -o sim CONTROL_RAIZ.v COUNT_RAIZ.v LSR_A_RAIZ.v LSR_R_RAIZ.v LSR_TMP_RAIZ.v Periferico_raiz.v RAIZ.v SUM_C2_RAIZ.v tb_Periferico_raiz.v
+ vvp sim
+```
+Para visualizar en GTKWave, ejecutar en la terminal:
+
+```
+gtkwave raiz.vcd &
+```
+
+El testbench posee un numero predeterminado de prueba que puede ser cambiado; se encuentra en la línea  de este mismo archivo.
 
 
 
