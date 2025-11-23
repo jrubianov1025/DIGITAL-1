@@ -29,7 +29,6 @@ hay 9 archivos dentro de esta carpeta:
 
 - TB_multiplicador.v —
 
-  [Multiplicador.S](./Multiplicador/Multiplicador.s)
 ---
 
 ### Divisor
