@@ -9,6 +9,7 @@ y un testbench para su simulacion. Ademas se encuentran 4 archivos adicionales n
 
 ### Multiplicador 
 
+Este modulo en su mayoria corresponden a codigos suministrados por el docente a modo de ejemplo.
 
 hay 9 archivos dentro de esta carpeta:
 
@@ -47,6 +48,41 @@ El testbench posee dos numero predeterminados de prueba que pueden ser cambiados
 ---
 
 ### Divisor
+
+hay 9 archivos dentro de esta carpeta:
+
+- `Divisor.S` — Archivo en Assembler con el objetivo de realizar la comunicacion entre el periferico y el procesador 
+
+- `Periferico_DIVISOR.v` — Archivo que instancia el modulo divisor como un periferico de un procesasdor RISC-V
+
+- `DIVISOR.v` — módulo TOP del divisor, el cual declara las variables de entrada y salida del modulo, ademas de llamar el resto de modulos necesarios.
+
+- `COMPARADOR_DIVISOR.v` — 
+
+- `CONTADOR_DIVISOR.v` — 
+
+- `CONTROL_DIVISOR.v` — Maquina de control del periferico, genera señales de control para el correcto funcionamiento del periferico (basado en el diagrama de estados)
+
+- `SHIFT_DEC_DIVISOR.v` —
+
+- `SUMADOR_DIVISOR.v` — Corrimiento del registro hacia la derecha, empleado en el multiplicador
+
+- `tb_Periferico_DIVISOR.v` — Modulo TESTBENCH para probar el funcionamiento de el periferico, crea un archivo .vcd que puede ser visualizado en GTKWAVE.
+
+Si se quiere simular basta con abrir una terminal en la carpeta Multiplicador y ejecutar el siguiente codigo:
+
+```
+iverilog -o sim tb_divisor.v SUMADOR_DIVISOR.v SHIFT_DEC_DIVISOR.v Periferico_divisor.v DIVISOR.v CONTROL_DIVISOR.v CONTADOR_DIVISOR.v COMPARADOR_DIVISOR.v 
+vvp sim
+```
+para visualizar en GTKWAVE ejecutar en la terminal:
+
+```
+gtkwave tb_Periferico_DIVISOR.vcd &
+```
+
+El testbench posee dos numero predeterminados de prueba que pueden ser cambiados, se encuentra en las lineas 47 y 50 de este mismo.
+
 
 ---
 
