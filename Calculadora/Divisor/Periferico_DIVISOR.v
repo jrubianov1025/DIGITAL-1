@@ -6,7 +6,7 @@ module Periferico_DIVISOR (
   input [4:0] addr,    // dirección
   input rd,            // lectura
   input wr,            // escritura
-  output reg [15:0] d_out // datos hacia el bus (extendidos a 32 bits)
+  output reg [15:0] d_out // datos hacia el bus 
 );
 
   // Registros internos
