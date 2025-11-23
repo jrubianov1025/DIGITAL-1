@@ -5,7 +5,7 @@ Incluye implementaciones estructurales, periféricos y testbench para validació
 
 ---
 
-## 📂 Estructura del proyecto
+## Estructura del proyecto
 
 - [Calculadora](./Calculadora/) — Carpeta que contiene los 4 módulos principales realizados durante las sesiones de clase:
   - Multiplicador  
@@ -13,11 +13,11 @@ Incluye implementaciones estructurales, periféricos y testbench para validació
   - Raíz cuadrada  
   - Binario a BCD
   
-- `README.md` — Este archivo de descripción principal.
+- `README.md` — Archivo de descripción principal.
 
 ---
 
-## 🧠 Descripción de los módulos
+## Descripción de los módulos
 
 ### Calculadora
 En la carpeta **Calculadora/** encontrarás la implementación de los módulos en Verilog, así como testbench asociados para su simulación.  
