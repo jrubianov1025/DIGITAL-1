@@ -81,7 +81,7 @@ para visualizar en GTKWAVE ejecutar en la terminal:
 gtkwave tb_Periferico_DIVISOR.vcd &
 ```
 
-El testbench posee dos numero predeterminados de prueba que pueden ser cambiados, se encuentra en las lineas 47 y 50 de este mismo.
+El testbench posee dos numero predeterminados de prueba que pueden ser cambiados, se encuentra en las lineas 101 y 102 de este mismo.
 
 
 ---
