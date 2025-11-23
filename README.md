@@ -14,7 +14,7 @@ Incluye implementaciones estructurales, periféricos y testbench para validació
   - Raíz cuadrada  
   - Binario a BCD
 
-- [Proyecto principal](./Calculadora/) — Carpeta que contiene los perifericos desarrollados como proyecto principal de la asignatura:
+- [Proyecto Principal](Proyecto_principal/) — Carpeta que contiene los perifericos desarrollados como proyecto principal de la asignatura:
 
   - 3 bits por pixel
   - 12 bits por pixel
