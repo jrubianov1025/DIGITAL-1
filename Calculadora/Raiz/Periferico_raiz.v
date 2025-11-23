@@ -6,7 +6,7 @@ module Periferico_raiz (
   input [4:0] addr,     // dirección (desde el bus)
   input rd,             // lectura
   input wr,             // escritura
-  output reg [15:0] d_out // salida hacia el bus (extendida a 32 bits)
+  output reg [15:0] d_out // salida hacia el bus
 );
 
   // Registros internos
