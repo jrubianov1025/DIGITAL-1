@@ -194,7 +194,7 @@ Para visualizar en GTKWave, ejecutar en la terminal:
 gtkwave raiz.vcd &
 ```
 
-El testbench posee un numero predeterminado de prueba que puede ser cambiado; se encuentra en la línea  de este mismo archivo.
+El testbench posee un numero predeterminado de prueba que puede ser cambiado; se encuentra en la línea 106 de este mismo archivo.
 
 
 
