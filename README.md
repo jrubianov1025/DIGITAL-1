@@ -11,9 +11,8 @@ Incluye implementaciones estructurales, periféricos y testbench para validació
   - Multiplicador  
   - Divisor  
   - Raíz cuadrada  
-  - Binario a BCD  
-  - Ver archivos en: `./Calculadora/`
-
+  - Binario a BCD
+  
 - `README.md` — Este archivo de descripción principal.
 
 ---
