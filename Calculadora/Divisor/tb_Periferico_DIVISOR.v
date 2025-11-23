@@ -76,23 +76,12 @@ module tb_Periferico_DIVISOR;
     end
   endtask
 
-  // ==========================
-  // Monitoreo continuo
-  // ==========================
   initial begin
     $dumpfile("tb_Periferico_DIVISOR.vcd");
     $dumpvars(0, tb_Periferico_DIVISOR);
 
-    $display("\n=== INICIO ===\n");
-    $display("Tiempo | CLK | reset | cs | wr | rd | addr | d_in | d_out | START | DONE | DV | DR | R_int");
-    $display("-------------------------------------------------------------------------------------------");
   end
 
-  always @(posedge CLK) begin
-    $display("%6t |  %b  |   %b   | %b  | %b  | %b  |  %02h  | %5d | %5d |   %b   |  %b   | %5d | %5d | %5d",
-             $time, CLK, reset, cs, wr, rd, addr, d_in, d_out,
-             START_int, DONE_int, DV_int, DR_int, R_int);
-  end
 
   // ==========================
   // Secuencia principal
@@ -106,7 +95,7 @@ module tb_Periferico_DIVISOR;
 
     #20 reset = 0;
 
-    $display("\n[INFO] 100 / 10\n");
+    $display("\n[INFO] 900 / 5\n");
 
     // Escribir valores
     write_reg(5'h04, 16'd900);  // DV
@@ -132,7 +121,8 @@ module tb_Periferico_DIVISOR;
   end
 
 endmodule
-
-// si se quiere simular, pegar esto en consola: 
-// iverilog -o sim tb_divisor.v SUMADOR_DIVISOR.v SHIFT_DEC_DIVISOR.v Periferico_divisor.v DIVISOR.v CONTROL_DIVISOR.v CONTADOR_DIVISOR.v COMPARADOR_DIVISOR.v 
-// vvp sim
+/*
+ si se quiere simular, pegar esto en consola: 
+ iverilog -o sim tb_divisor.v SUMADOR_DIVISOR.v SHIFT_DEC_DIVISOR.v Periferico_divisor.v DIVISOR.v CONTROL_DIVISOR.v CONTADOR_DIVISOR.v COMPARADOR_DIVISOR.v 
+ vvp sim
+ */
