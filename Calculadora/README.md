@@ -1,5 +1,4 @@
 
-
 ## 📘 Descripción de los módulos
 
 En esta carpeta se encuentran 4 carpetas, una para cada periférico.
@@ -211,7 +210,7 @@ El testbench posee un numero predeterminado de prueba que puede ser cambiado; se
 
 ---
 
-### Binario a BCD
+### 🔢 Binario a BCD
 
 Este módulo convierte un número binario de 16 bits a su representación en BCD (Binary-Coded Decimal) empleando el algoritmo Double Dabble (Shift-and-Add-3). funciona principalmente con el uso de corrimientos concatenados, comparador mediante el uso de un sumador en complemento a dos y una máquina de control que coordina las etapas.
 
