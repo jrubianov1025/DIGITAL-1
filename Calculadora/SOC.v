@@ -114,7 +114,7 @@ Periferico_multiplicador mult1 (
    );
 
   peripheral_uart #(
-     .clk_freq(26000000),    // 27000000 for gowin 33333333 for efinix
+     .clk_freq(30000000),    // 27000000 for gowin 33333333 for efinix
      .baud(115200)            // 57600 for gowin
    ) per_uart(
      .clk(clk), 
@@ -134,17 +134,19 @@ Periferico_multiplicador mult1 (
   // se hace con los 8 bits mas significativos de mem_addr
   // Se asigna el rango de la memoria de programa 0x00000000 - 0x003FFFFF
   // ====================================================================
-  reg [5:0]cs;  // CHIP-SELECT
+  reg [7:0]cs;  // CHIP-SELECT
   always @*
   begin
       case (mem_addr[31:16])	// direcciones - chip_select
-        16'h0040: cs= 6'b100000; 	//uart
-        16'h0041: cs= 6'b010000;	   // Bin2BCD
-        16'h0042: cs= 6'b001000;	   // Raíz cuadrada
-        16'h0043: cs= 6'b000100;	   // Divisor
-        16'h0044: cs= 6'b000010;	   // Multiplicador
-        16'h0000: cs= 6'b000001;    //RAM   
-        default:  cs= 6'b000001;       
+        16'h0040: cs= 8'b00100000; 	   //uart
+        16'h0041: cs= 8'b00010000;	   // Bin2BCD
+        16'h0042: cs= 8'b00001000;	   // Raíz cuadrada
+        16'h0043: cs= 8'b00000100;	   // Divisor
+        16'h0044: cs= 8'b00000010;	   // Multiplicador
+        16'h0045: cs= 8'b01000000;     //dpRAM
+        16'h0046: cs= 8'b10000000;     //bcd_to_bin
+        16'h0000: cs= 8'b00000001;     //RAM   
+        default:  cs= 8'b00000001;       
       endcase
   end
 
@@ -152,13 +154,14 @@ Periferico_multiplicador mult1 (
   always @*
   begin
       case (cs)
-        6'b100000: mem_rdata = uart_dout;
-        6'b010000: mem_rdata = bin2bcd_dout;
-        6'b001000: mem_rdata = sqrt_dout;
-        6'b000100: mem_rdata = div_dout;
-        6'b000010: mem_rdata = mult_dout;
-        6'b000001: mem_rdata = RAM_rdata;
-        default:  mem_rdata = 32'b0;
+        8'b10000000: mem_rdata = bcd2bin_dout;
+        8'b00100000: mem_rdata = uart_dout;
+        8'b00010000: mem_rdata = bin2bcd_dout;
+        8'b00001000: mem_rdata = sqrt_dout;
+        8'b00000100: mem_rdata = div_dout;
+        8'b00000010: mem_rdata = mult_dout;
+        8'b00000001: mem_rdata = RAM_rdata;
+        default:  mem_rdata = RAM_rdata;
 
       endcase
   end
