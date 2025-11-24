@@ -6,9 +6,12 @@ Incluye implementaciones estructurales, periféricos y testbench para validació
 ---
 
 # INTEGRANTES 
+
 Juan Diego Rubiano Valero -CC 1025525548
 
 Ivy Sofia González Varela -CC 1014737548
+
+Cristian Norbey Hernández Gualteros -CC 1001091723
 
 ---
 
