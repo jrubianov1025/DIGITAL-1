@@ -1,4 +1,5 @@
 
+
 ## 📘 Descripción de los módulos
 
 En esta carpeta se encuentran 4 carpetas, una para cada periférico.
@@ -22,9 +23,11 @@ Este módulo toma dos operandos de 16 bits y produce un resultado de 32 bits uti
 
 Se describe con mas detalle el funcionamiento del modulo mediante el uso de 3 diagramas, Diagrama de flujo, Datapath y diagrama de estados; a continuacion se anexan estos 3 diagramas.
 
+<p align="center">
+  <img src="./Diagramas%20de%20bloques/Diagrama%20de%20flujo%20MULT.jpeg" width="350">
 
-
-
+  <img src="./Diagramas%20de%20bloques/D_ESTADOS%20MULT.jpeg" width="350">
+</p>
 
 
 A modo de resumen, se especifica en la siguiente tabla las diferentes variables presentes en el diseño.
@@ -82,9 +85,11 @@ Este módulo implementa una división larga binaria mediante corrimientos concat
 Se describe con mas detalle el funcionamiento del modulo mediante el uso de 3 diagramas, Diagrama de flujo, Datapath y diagrama de estados; a continuacion se anexan estos 3 diagramas.
 
 
-
-
-
+<p align="center">
+  <img src="./Diagramas%20de%20bloques/Diagrama%20de%20flujo%20Div.jpeg" width="350">
+ 
+  <img src="./Diagramas%20de%20bloques/D_ESTADOS%20DIV.jpeg" width="350">
+</p>
 
 A modo de resumen, se especifica en la siguiente tabla las diferentes variables presentes en el diseño.
 
