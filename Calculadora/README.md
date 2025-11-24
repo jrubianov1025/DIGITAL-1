@@ -149,7 +149,11 @@ Este módulo implementa la Raiz cuadrada binaria mediante un procedimiento simil
 
 Se describe con mas detalle el funcionamiento del modulo mediante el uso de 3 diagramas, Diagrama de flujo, Datapath y diagrama de estados; a continuacion se anexan estos 3 diagramas.
 
-
+<p align="center">
+  <img src="./Diagramas%20de%20bloques/Diagrama%20de%20flujo%20Raiz.jpeg" width="350">
+  <img src="./Diagramas%20de%20bloques/D_ESTADOS%20Raiz.jpeg" width="350"> 
+  <img src="./Diagramas%20de%20bloques/Camino%20de%20datos%20Raiz.jpeg" width="350">
+</p>
 
 
 
