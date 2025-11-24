@@ -25,8 +25,8 @@ Se describe con mas detalle el funcionamiento del modulo mediante el uso de 3 di
 
 <p align="center">
   <img src="./Diagramas%20de%20bloques/Diagrama%20de%20flujo%20MULT.jpeg" width="350">
-
-  <img src="./Diagramas%20de%20bloques/D_ESTADOS%20MULT.jpeg" width="350">
+  <img src="./Diagramas%20de%20bloques/D_ESTADOS%20MULT.jpeg" width="350"> 
+  <img src="./Diagramas%20de%20bloques/Camino%20de%20datos%20MULT.jpeg" width="350">
 </p>
 
 
@@ -87,8 +87,9 @@ Se describe con mas detalle el funcionamiento del modulo mediante el uso de 3 di
 
 <p align="center">
   <img src="./Diagramas%20de%20bloques/Diagrama%20de%20flujo%20Div.jpeg" width="350">
- 
   <img src="./Diagramas%20de%20bloques/D_ESTADOS%20DIV.jpeg" width="350">
+  <img src="./Diagramas%20de%20bloques/Camino%20de%20datos%20DV.jpeg" width="350">
+
 </p>
 
 A modo de resumen, se especifica en la siguiente tabla las diferentes variables presentes en el diseño.
