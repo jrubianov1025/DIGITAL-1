@@ -11,7 +11,7 @@ Juan Diego Rubiano Valero -CC 1025525548 - Grupo 7
 
 Ivy Sofia González Varela -CC 1014737548 - Grupo 7
 
-Cristian Norbey Hernández Gualteros -CC 1001091723 - Grupo 
+Cristian Norbey Hernández Gualteros -CC 1001091723 - Grupo 8
 
 ---
 
