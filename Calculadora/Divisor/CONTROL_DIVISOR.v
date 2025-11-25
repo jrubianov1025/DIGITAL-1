@@ -18,16 +18,13 @@ module CONTROL_DIVISOR(
     parameter S_ADD       = 3'b011;
     parameter S_END1      = 3'b100;
 
-    reg [2:0] STATE, NEXT_STATE;
+    reg [2:0] NEXT_STATE;
     reg [5:0] count;
 
     // MAQUINA DE ESTADOS - REGISTRO DE ESTADO
-always @(posedge CLK) begin
-    STATE <= NEXT_STATE;
-end
 
-always @(*) begin
-    case (STATE)
+always @(posedge CLK) begin
+    case (NEXT_STATE)
         S_START: begin
             if (START) NEXT_STATE = S_SHIFT_DEC;
             else       NEXT_STATE = S_START;
@@ -51,8 +48,11 @@ always @(*) begin
             end
 
             S_END1: begin
-               count = count + 1;
-               NEXT_STATE = (count>30) ? S_START : S_END1; // estado final
+                count = count + 1;
+                if (count > 20)
+                NEXT_STATE = S_START;
+                else
+                NEXT_STATE = S_END1; // estado final
             end
 
             default: NEXT_STATE = S_START;
@@ -63,7 +63,7 @@ always @(*) begin
     always @(*) begin
 
         
-        case (STATE)
+        case (NEXT_STATE)
             S_START: begin
                 DONE = 0;
                 LDA  = 0;
