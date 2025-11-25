@@ -272,3 +272,7 @@ gtkwave tb_Periferico_BinarioABCD.vcd &
 El testbench posee un numero predeterminado de prueba que puede ser cambiado; se encuentra en la línea 107 de este mismo archivo.
 
 ---
+### ARCHIVOS ADICIONALES PARA FUNCIONAMIENTO CALCULADORA 
+
+Los siguientes archivos son necesarios para el correcto funcionamiento de una calculadora por hardware implementada mediante el uso de periféricos de un procesador RISC-V. 
+- `Calculadora.S` — Archivo principal de la calculadora en Assembler
