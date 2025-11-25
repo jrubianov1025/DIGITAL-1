@@ -23,17 +23,14 @@
     parameter S_LOAD_A2   = 3'b110;
     parameter S_END1      = 3'b111;
     
-    reg [2:0] STATE, NEXT_STATE;
+    reg [2:0] NEXT_STATE;
     reg [5:0] count;
 
     // MAQUINA DE ESTADOS - REGISTRO DE ESTADO
+  
     always @(posedge CLK) begin
-    STATE <= NEXT_STATE;
-    end
 
-    always @(*) begin
-
-        case (STATE)
+        case (NEXT_STATE)
                
             S_START: begin
                 if (INIT)  NEXT_STATE = S_SHIFT_DEC;
@@ -78,7 +75,7 @@
 
     // LÓGICA DE SALIDAS (según diagrama)
     always @(*) begin
-      case (STATE)
+      case (NEXT_STATE)
 
         S_START: begin
           DONE   = 0;
