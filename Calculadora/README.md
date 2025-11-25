@@ -275,7 +275,7 @@ El testbench posee un numero predeterminado de prueba que puede ser cambiado; se
 ### ARCHIVOS ADICIONALES PARA FUNCIONAMIENTO CALCULADORA 
 
 Los siguientes archivos son necesarios para el correcto funcionamiento de una calculadora por hardware implementada mediante el uso de periféricos de un procesador RISC-V. 
-- `Calculadora.S` — Archivo principal de la calculadora en Assembler el cual se encarga de pedir el primer número por consola y lo almacena en uno de los registros del procesador, posteriormente pide el operador y lo almacena.
-- `Makefile — Archivo principal de la calculadora en Assembler
-- `Makefile(rtl)` — Archivo principal de la calculadora en Assembler
+- `Calculadora.S` — Archivo principal de la calculadora en Assembler el cual se encarga de pedir el primer número por consola, lo lee en formato BCD, lo convierte a binario y lo almacena en uno de los registros del procesador, dependiendo del operador si es multiplicación o división pide el segundo número y nuevamente lo convierte a binario y lo almacena en un registro diferente, en el caso de la raiz no pide un segundo nùmero sino que simplemente llama a la unidad de hardware del operador finalmente cuando ya se realizó la operación convierte el número de binario a BCD e imprime el resultado.
+- `Makefile` — 
+- `Makefile(rtl)` — Este archivo se encarga de llamar a todos los archivos 
 - `SOC.v` — Archivo principal de la calculadora en Assembler
