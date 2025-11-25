@@ -22,7 +22,9 @@
     parameter S_LOAD_0     =3'b101;
     parameter S_LOAD_A2   = 3'b110;
     parameter S_END1      = 3'b111;
+    
     reg [2:0] STATE, NEXT_STATE;
+    reg [5:0] count;
 
     // MAQUINA DE ESTADOS - REGISTRO DE ESTADO
     always @(posedge CLK) begin
@@ -36,6 +38,7 @@
             S_START: begin
                 if (INIT)  NEXT_STATE = S_SHIFT_DEC;
                 else       NEXT_STATE = S_START;
+                count = 0;
             end
 
             S_SHIFT_DEC: begin
@@ -65,7 +68,8 @@
             end
             
             S_END1: begin
-                NEXT_STATE = S_END1;
+              count = count + 1;
+              NEXT_STATE = (count>30) ? S_START : S_END1;
             end
 
             default: NEXT_STATE = S_START;
