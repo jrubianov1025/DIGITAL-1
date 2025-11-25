@@ -18,22 +18,20 @@
     parameter S_CHECK     = 3'b011;
     parameter S_END1      = 3'b100;
     
-    reg [2:0] STATE, NEXT_STATE;
+    reg [2:0] NEXT_STATE;
     reg [5:0] count;
 
     // MAQUINA DE ESTADOS - REGISTRO DE ESTADO
+
 always @(posedge CLK) begin
-    STATE <= NEXT_STATE;
-end
-
-always @(*) begin
-
-  case (STATE)
+    
+  case (NEXT_STATE)
   
     S_START: begin
+      count = 0;
       if (INIT)  NEXT_STATE = S_SUM;
       else       NEXT_STATE = S_START;
-      count = 0;
+ 
     end
 
     S_SUM: begin
@@ -53,7 +51,10 @@ always @(*) begin
 
     S_END1: begin
       count = count + 1;
-      NEXT_STATE = (count>30) ? S_START : S_END1;
+      if (count > 20)
+      	NEXT_STATE = S_START;
+      else
+      	NEXT_STATE = S_END1;
     end
 
     default: NEXT_STATE = S_START;
@@ -62,7 +63,7 @@ end
 
     // LÓGICA DE SALIDAS (según diagrama)
     always @(*) begin
-      case (STATE)
+      case (NEXT_STATE)
 
         S_START: begin
           DONE = 0;
