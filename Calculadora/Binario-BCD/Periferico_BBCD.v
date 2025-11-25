@@ -6,7 +6,7 @@ module Periferico_BinarioABCD (
   input [5:0] addr,     // dirección del registro (más ancha para 0x1C)
   input rd,             // lectura
   input wr,             // escritura
-  output reg [15:0] d_out // salida hacia el bus 
+  output reg [15:0] d_out // salida hacia el bus
 );
 
 
@@ -48,8 +48,8 @@ module Periferico_BinarioABCD (
     end
     else begin
       if (cs && wr) begin
-		   Op_A = s[0] ? d_in    : Op_A;	//Write Registers
-		   INIT = s[1] ? d_in[0] : INIT;
+		   Op_A <= s[0] ? d_in    : Op_A;	//Write Registers
+		   INIT <= s[1] ? d_in[0] : INIT;
       end
     end
   end
@@ -59,11 +59,11 @@ module Periferico_BinarioABCD (
   always @(posedge CLK) begin
     if (reset)
       d_out <= 0;
-    else if (cs) begin
+    else if (cs && rd) begin
       case (s[3:0])
-        4'b0100: d_out <= {16'b0, RESULT};   
-        4'b1000: d_out <= {31'b0, DONE};     
-        default: d_out <= 32'b0;
+        4'b0100: d_out <= RESULT;   
+        4'b1000: d_out <= {15'b0, DONE};     
+        default: d_out <= 16'b0;
       endcase
     end
   end
