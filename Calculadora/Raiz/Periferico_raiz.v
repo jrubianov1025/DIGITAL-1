@@ -6,7 +6,7 @@ module Periferico_raiz (
   input [4:0] addr,     // dirección (desde el bus)
   input rd,             // lectura
   input wr,             // escritura
-  output reg [15:0] d_out // salida hacia el bus
+  output reg [15:0] d_out // salida hacia el bus 
 );
 
   // Registros internos
@@ -41,8 +41,8 @@ module Periferico_raiz (
       Op_A <= 0;
       INIT <= 0;
     end else if (cs && wr) begin
-      if (s[0]) Op_A <= d_in;     // Escribir operando
-      if (s[1]) INIT <= d_in[0];  // Escribir bit de inicio
+      Op_A  <= s[0] ? d_in : Op_A;   // Escribir operando
+      INIT <= s[1] ? d_in[0] : INIT; // Escribir bit de inicio
     end
   end
 
@@ -53,9 +53,9 @@ module Periferico_raiz (
       d_out <= 0;
     end else if (cs && rd) begin
       case (s)
-        5'b00100: d_out <= {16'b0, Resultado};  // Lectura del resultado
-        5'b01000: d_out <= {31'b0, DONE};       // Lectura del estado
-        default:  d_out <= 32'b0;
+        5'b00100: d_out <= Resultado;     // Lectura del resultado
+        5'b01000: d_out <= {15'b0, DONE}; // Lectura del estado
+        default:  d_out <= 16'b0;
       endcase
     end
   end
