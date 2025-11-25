@@ -36,9 +36,9 @@ always @(posedge CLK) begin
             end
 
             S_CHECK: begin
-                if (MSB && !Z)      NEXT_STATE = S_SHIFT_DEC;
+                if (Z)         NEXT_STATE = S_END1;
+                else if (MSB && !Z)      NEXT_STATE = S_SHIFT_DEC;
                 else if (!MSB)      NEXT_STATE = S_ADD;
-                else if (Z)         NEXT_STATE = S_END1;
                 else                NEXT_STATE = S_CHECK;
             end
 
