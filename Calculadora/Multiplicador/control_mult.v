@@ -17,7 +17,7 @@ module control_mult(clk , rst, lsb_B, init , z, done , sh ,reset , add);
     parameter fin   = 3'b100;
 
     reg [2:0] state;
-    reg [3:0] count;
+    reg [5:0] count;
 
     initial begin
         done = 0;
@@ -62,7 +62,7 @@ module control_mult(clk , rst, lsb_B, init , z, done , sh ,reset , add);
 
                 fin: begin
                     count = count + 1;
-                    if(count > 9)
+                    if(count > 30)
                         state = START;
                     else
                         state = fin;
