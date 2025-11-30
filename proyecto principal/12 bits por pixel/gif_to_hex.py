@@ -112,16 +112,15 @@ def gif_to_fpga_with_markers(gif_path, output_hex="../animation.hex", max_fps=No
             # Convertir frame a líneas hex
             frame_hex_lines = image_to_fpga_hex_lines(img_array)
             
-            # Escribir marcador de inicio de frame (comentario para Verilog)
-            if idx > 0:
-                f.write(f"// FRAME_{idx}\n")
+            # NO escribir comentarios dentro del archivo para evitar problemas
+            # Solo escribir las líneas hex puras
             
             # Escribir todas las líneas del frame
             for line in frame_hex_lines:
                 f.write(line + '\n')
             
             progress = ((idx + 1) / final_frame_count) * 100
-            print(f"   ├─ Frame {idx:3d}: Líneas escritas ({progress:5.1f}%)")
+            print(f"   ├─ Frame {idx:3d}: Líneas {idx*2048:5d}-{(idx+1)*2048-1:5d} ({progress:5.1f}%)")
     
     print(f"   └─ ✓ Todos los frames procesados")
     print(f"\n💾 Archivo guardado: {output_hex}")
@@ -155,11 +154,11 @@ def gif_to_fpga_with_markers(gif_path, output_hex="../animation.hex", max_fps=No
     print(f"📁 Archivo: {output_hex}")
     print(f"📊 Frames: {final_frame_count}")
     print(f"⏱️  FPS: {final_fps:.2f}")
-    print(f"\n💡 Nota sobre Verilog:")
-    print(f"   • Los comentarios // FRAME_X separan frames visualmente")
-    print(f"   • $readmemh ignora líneas que empiezan con //")
-    print(f"   • Tu módulo memory.v NO necesita cambios")
+    print(f"\n💡 Nota sobre el archivo:")
+    print(f"   • SIN comentarios para evitar problemas de indexación")
+    print(f"   • Cada frame ocupa EXACTAMENTE 2048 líneas consecutivas")
     print(f"   • Frame N empieza en línea: N * 2048")
+    print(f"   • Frame N termina en línea: (N+1) * 2048 - 1")
     print(f"="*60)
     
     return final_frame_count, final_fps
