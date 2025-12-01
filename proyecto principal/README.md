@@ -41,17 +41,27 @@ Este módulo sincroniza la lectura de memoria, la generación de clocks, el esca
 
 - `led_panel_video_pnr.log` — Este archivo muestra el uso de recursos de la FPGA cuando se está reproduciendo el video.
 
-- `memory_doble.v` —
+- `memory_doble.v` — Este módulo implementa un sistema de doble buffer para almacenar los datos necesarios para reproducir el video. Está diseñado para permitir escritura y lectura simultánea en dos memorias separadas, evitando tearing y asegurando actualización fluida de cuadros en aplicaciones como paneles LED.
 
-- `memory_principal.v` —
+- `memory_principal.v` — Este módulo implementa una memoria ROM cargada desde archivo, diseñada para almacenar una secuencia completa de imágenes o frames que serán reproducidos por el sistema de video del panel LED.
 
-- `sim` —
+- `video.hex` — Este archivo contiene un ejemplo de como queda la información de un video .gif en formato hexadecimal.
 
-- `synth.log` —
+- `tb_led_panel_video.v` — Módulo TESTBENCH para probar el funcionamiento del periférico. Crea un archivo .vcd que puede ser visualizado en GTKWave.
 
-- `tb_led_panel_video.v` —
- 
-- `video.hex` —
+Si se quiere simular, basta con abrir una terminal en la carpeta Video y ejecutar el siguiente código:
+
+```
+iverilog -o sim testbench.v Comparador.v Contador.v Control_video.v Led_panel_video.v Lsr_led.v Multiplexor.v memory_doble.v memory_principal.v
+vvp sim
+```
+
+Para visualizar en GTKWave, ejecutar en la terminal:
+
+```
+gtkwave tb_led_panel_video.vcd &
+```
+
 
 
 
