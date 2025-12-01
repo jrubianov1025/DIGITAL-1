@@ -51,7 +51,7 @@ Hay 9 archivos dentro de esta carpeta:
 
 - `acc.v` — Acumulador del producto parcial para la creación del resultado final.
 
-- `comp.v` — omparador para verificar cuántos ciclos restantes quedan de ejecución. 
+- `comp.v` — Comparador para verificar cuántos ciclos restantes quedan de ejecución. 
 
 - `control_mult.v` — Máquina de control del periférico. Genera señales de control para el correcto funcionamiento del periférico (basado en el diagrama de estados).
 
