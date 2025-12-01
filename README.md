@@ -28,6 +28,6 @@ Cristian Norbey Hernández Gualteros -CC 1001091723 - Grupo 8
 
   - 3 bits por pixel
   - 12 bits por pixel
-  - Reproduccion de video
+  - Reproducción de video
   
 - `README.md` — Archivo de descripción principal.
