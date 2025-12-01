@@ -3,7 +3,7 @@ from PIL import Image
 import numpy as np
 
 CARPETA = "pattern"
-## CARPETA = "arbol-de-navidad-imagen-animada-0218"
+## CARPETA = "arbol-de-navidad"
 SALIDA = "video.hex"
 
 def procesar_frame(img, f):
