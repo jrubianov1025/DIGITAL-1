@@ -17,17 +17,17 @@ Cristian Norbey Hernández Gualteros -CC 1001091723 - Grupo 8
 
 ## Estructura del Repositorio
 
-- [Calculadora](./Calculadora/) — Carpeta que contiene los 4 perifericos principales realizados durante las sesiones de clase, cada periferico posee su propia carpeta:
+- [Calculadora](./Calculadora/) — Carpeta que contiene los 4 periféricos principales realizados durante las sesiones de clase, cada periférico posee su propia carpeta:
  
   - Multiplicador  
   - Divisor  
   - Raíz cuadrada  
   - Binario a BCD
 
-- [Proyecto Principal](./proyecto%20principal/) — Carpeta que contiene los perifericos desarrollados como proyecto principal de la asignatura:
+- [Proyecto Principal](./proyecto%20principal/) — Carpeta que contiene los periféricos desarrollados como proyecto principal de la asignatura:
 
   - 3 bits por pixel
   - 12 bits por pixel
-  - reproduccion de video
+  - Reproduccion de video
   
 - `README.md` — Archivo de descripción principal.
