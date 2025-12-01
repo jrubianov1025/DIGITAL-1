@@ -26,7 +26,6 @@ Cristian Norbey Hernández Gualteros -CC 1001091723 - Grupo 8
 
 - [Proyecto Principal](./proyecto%20principal/) — Carpeta que contiene los periféricos desarrollados como proyecto principal de la asignatura:
 
-  - 3 bits por pixel
   - 12 bits por pixel
   - Reproducción de video
   
