@@ -14,6 +14,8 @@ Cada unas de las carpetas contiene los siguientes módulos:
 
 Para está para del proyecto se utiliza fundamentalmente los módulos de la otra carpeta pero adaptada para video. Contiene un archivo en python y por otro lado se modifica el módulo de memory para reproducir el video en la pantalla.
 
-- `memory.v` — Este es el módulo principal el cuál declara las variables de entrada y salida del módulo, además de llamar el resto de módulos necesarios.
+- `gif_to_hex.py` — Este código de python se encarga de tomar el archivo .gif y pasarlo en formato .hex para que el módulo memory.v pueda trabajar con el mismo.
+
+- `memory.v` — Este módulo implementa una memoria para almacenar imágenes estáticas o animaciones en formato .hex, permite manejar múltiples frames, calculando el tiempo entre ellos según la frecuencia del reloj y un delay configurable.
   
-- `gif_to_hex.py` — Máquina de control del periférico. Genera señales de control para el correcto funcionamiento del periférico 
+
