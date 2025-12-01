@@ -28,18 +28,18 @@ Cada unas de las carpetas contiene los siguientes módulos:
   
 - `Contador.v` —  Contador descendente para llevar un registro de ciclos de ejecución realizados.
   
-- `Control_video.v` — Este módulo es la máquina de estados, que se encarga de controlar el flujo completo de video hacia el panel LED. 
+- `Control_video.v` — Este módulo se encarga de controlar el flujo completo de video hacia el panel LED. 
 
 - `Led_panel_video.v` — Módulo que funciona como el controlador principal para panel RGB basado en multiplexación y reproducción de video por frames.
 Este módulo sincroniza la lectura de memoria, la generación de clocks, el escaneo de filas/columnas y el envío de datos RGB hacia un panel LED.
 
-- `Lsr_led.v` —
+- `Lsr_led.v` — Este módulo, funciona como el registro de desplazamiento parametrizable para control de LEDs. Carga un valor inicial predefinido y luego lo desplaza hacia la izquierda en cada pulso negativo del reloj cuando la señal shift está habilitada.
 
-- `Multiplexor.v` —
+- `Multiplexor.v` — Este módulo implementa un multiplexor de 4 a 1 que selecciona, según el índice sel, un bit específico de cada uno de los seis canales de color provenientes de dos píxeles (RGB0 y RGB1).
 
-- `led_panel_video.lpf` —
+- `led_panel_video.lpf` — Este archivo define las restricciones físicas y temporales del diseño para la FPGA, asignando cada señal del módulo led_panel_video a un pin específico del dispositivo utilizado (Intel Cyclone IV E: 5E-75A), configurando sus características eléctricas.
 
-- `led_panel_video_pnr.log` —
+- `led_panel_video_pnr.log` — Este archivo muestra el uso de recursos de la FPGA cuando se está reproduciendo el video.
 
 - `memory_doble.v` —
 
