@@ -24,10 +24,10 @@ Cada unas de las carpetas contiene los siguientes módulos:
 
 ###  Video
 
-Para está para del proyecto se utiliza fundamentalmente los módulos de la otra carpeta pero adaptada para video. Contiene un archivo en python y por otro lado se modifica el módulo de memory para reproducir el video en la pantalla.
+Para está parte del proyecto se utiliza fundamentalmente los módulos de la otra carpeta pero adaptada para video, es decir, los módulos descritos anteriormente (led_panel_4k.v, ctrl_lp4k.v, comp.v, count.v, lsr_led.v y mux_led.v. Adicionalmente, dentro de la carpeta contiene un archivo en python y por otro lado se modifica el módulo de memory para reproducir el video en la pantalla.
 
 - `gif_to_hex.py` — Este código de python se encarga de tomar el archivo .gif y pasarlo en formato .hex para que el módulo memory.v pueda trabajar con el mismo.
 
 - `memory.v` — Este módulo implementa una memoria para almacenar imágenes estáticas o animaciones en formato .hex, permite manejar múltiples frames, calculando el tiempo entre ellos según la frecuencia del reloj y un delay configurable.
-  
+
 
