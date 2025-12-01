@@ -20,7 +20,7 @@ La mayoría de los archivos fueron suministrados como ejemplo por el docente, pe
 
 Este módulo toma dos operandos de 16 bits y produce un resultado de 32 bits utilizando un proceso iterativo controlado por una máquina de estados.
 
-Se describe con mas detalle el funcionamiento del modulo mediante el uso de 3 diagramas, Diagrama de flujo, Datapath y diagrama de estados; a continuacion se anexan estos 3 diagramas.
+Se describe con mas detalle el funcionamiento del modulo mediante el uso de 3 diagramas, Diagrama de flujo, Datapath y Diagrama de estados; a continuación se anexan estos 3 diagramas.
 
 <p align="center">
   <img src="./Diagramas%20de%20bloques/Diagrama%20de%20flujo%20MULT.jpeg" width="350">
@@ -29,7 +29,7 @@ Se describe con mas detalle el funcionamiento del modulo mediante el uso de 3 di
 </p>
 
 
-A modo de resumen, se especifica en la siguiente tabla las diferentes variables presentes en el diseño.
+A modo de resumen, se específica en la siguiente tabla las diferentes variables presentes en el diseño.
 
 | Señal    | I/O    | Bits | Descripción                     |
 | -------- | ------ | ---- | ------------------------------- |
@@ -51,7 +51,7 @@ Hay 9 archivos dentro de esta carpeta:
 
 - `acc.v` — Acumulador del producto parcial para la creación del resultado final.
 
-- `comp.v` — Comparador para verificar cuántos ciclos restantes quedan de ejecución. 
+- `comp.v` — Comparador para verificar cuantos ciclos restantes quedan de ejecución. 
 
 - `control_mult.v` — Máquina de control del periférico. Genera señales de control para el correcto funcionamiento del periférico (basado en el diagrama de estados).
 
@@ -81,7 +81,7 @@ El testbench posee dos números predeterminados de prueba que pueden ser cambiad
 
 Este módulo implementa una división larga binaria mediante corrimientos concatenados, comparador con el uso de un sumador en complemento a dos y una máquina de control que coordina las etapas.
 
-Se describe con mas detalle el funcionamiento del modulo mediante el uso de 3 diagramas, Diagrama de flujo, Datapath y diagrama de estados; a continuacion se anexan estos 3 diagramas.
+Se describe con mas detalle el funcionamiento del módulo mediante el uso de 3 diagramas, Diagrama de flujo, Datapath y Diagrama de estados; a continuación se anexan estos 3 diagramas.
 
 
 <p align="center">
@@ -91,7 +91,7 @@ Se describe con mas detalle el funcionamiento del modulo mediante el uso de 3 di
 
 </p>
 
-A modo de resumen, se especifica en la siguiente tabla las diferentes variables presentes en el diseño.
+A modo de resumen, se específica en la siguiente tabla las diferentes variables presentes en el diseño.
 
 | Señal    | I/O    | Bits | Descripción                     |
 | -------- | ------ | ---- | ------------------------------- |
@@ -142,11 +142,11 @@ El testbench posee dos números predeterminados de prueba que pueden ser cambiad
 
 ---
 
-### ✔️ Raiz
+### ✔️ Raíz
 
-Este módulo implementa la Raiz cuadrada binaria mediante un procedimiento similar a una division larga, utiliza corrimientos, comparador con el uso de un sumador en complemento a dos y una máquina de control que coordina las etapas.
+Este módulo implementa la Raíz cuadrada binaria mediante un procedimiento similar a una division larga, utiliza corrimientos, comparador con el uso de un sumador en complemento a dos y una máquina de control que coordina las etapas.
 
-Se describe con mas detalle el funcionamiento del modulo mediante el uso de 3 diagramas, Diagrama de flujo, Datapath y diagrama de estados; a continuacion se anexan estos 3 diagramas.
+Se describe con mas detalle el funcionamiento del módulo mediante el uso de 3 diagramas, Diagrama de flujo, Datapath y Diagrama de estados; a continuación se anexan estos 3 diagramas.
 
 <p align="center">
   <img src="./Diagramas%20de%20bloques/Diagrama%20de%20flujo%20Raiz.jpeg" width="350">
@@ -157,11 +157,11 @@ Se describe con mas detalle el funcionamiento del modulo mediante el uso de 3 di
 
 
 
-A modo de resumen, se especifica en la siguiente tabla las diferentes variables presentes en el diseño.
+A modo de resumen, se específica en la siguiente tabla las diferentes variables presentes en el diseño.
 
 | Señal      | I/O    | Bits | Descripción                     |
 | --------   | ------ | ---- | ------------------------------- |
-| `Op_A`     | Input  | 16   | Numero del cual obtener su raiz |
+| `Op_A`     | Input  | 16   | Numero del cual obtener su raíz |
 | `INIT`     | Input  | 1    | Inicia la operación             |
 | `CLK`      | Input  | 1    | Señal de reloj                  |
 | `DONE`     | Output | 1    | Indica que la operación terminó |
@@ -173,25 +173,25 @@ Hay 10 archivos dentro de esta carpeta:
 
 - `Raiz.S` — Archivo en Assembler con el objetivo de realizar la comunicación entre el periférico y el procesador.
 
-- `Periferico_raiz.v` — Archivo que instancia el módulo Raiz como un periférico de un procesador RISC-V.
+- `Periferico_raiz.v` — Archivo que instancia el módulo Raíz como un periférico de un procesador RISC-V.
 
-- `RAIZ.v` — Módulo TOP de la Raiz cuadrada, el cual declara las variables de entrada y salida del módulo, además de llamar el resto de módulos necesarios.
+- `RAIZ.v` — Módulo TOP de la Raíz cuadrada, el cual declara las variables de entrada y salida del módulo, además de llamar el resto de módulos necesarios.
 
 - `CONTROL_RAIZ.v` —   Máquina de control del periférico. Genera señales de control para el correcto funcionamiento del periférico (basado en el diagrama de estados).
 
 - `COUNT_RAIZ.v` — Contador descendente para llevar un registro de ciclos de ejecución realizados.
 
-- `LSR_A_RAIZ.v` — toma el valor original y realiza un desplazamiento de dos bits para realizar la comparacion del numero con el resultado parcial.
+- `LSR_A_RAIZ.v` — Toma el valor original y realiza un desplazamiento de dos bits para realizar la comparación del número con el resultado parcial.
 
-- `LSR_R_RAIZ.v` — se va construyendo el resultado mediante un corrimento bit a bit y una señal de control R0.
+- `LSR_R_RAIZ.v` — Se va construyendo el resultado mediante un corrimiento bit a bit y una señal de control R0.
  
 - `LSR_TMP_RAIZ.v` — Registro de almacenamiento temporal del resultado parcial para su posterior uso en el sumador en complemento a dos. 
 
-- `SUM_C2_RAIZ.v` — Sumador en complemento a dos que realiza la comparación directa de la pareja de bits en LSR_A_RAIZ y LSR_TMP_RAIZ concatenado con un uno para validar la operacion.
+- `SUM_C2_RAIZ.v` — Sumador en complemento a dos que realiza la comparación directa de la pareja de bits en LSR_A_RAIZ y LSR_TMP_RAIZ concatenado con un uno para validar la operación.
  
 - `tb_Periferico_DIVISOR.v` — Módulo TESTBENCH para probar el funcionamiento del periférico. Crea un archivo .vcd que puede ser visualizado en GTKWave.
 
-Si se quiere simular, basta con abrir una terminal en la carpeta Raiz y ejecutar el siguiente código:
+Si se quiere simular, basta con abrir una terminal en la carpeta Raíz y ejecutar el siguiente código:
 
 ```
  iverilog -o sim CONTROL_RAIZ.v COUNT_RAIZ.v LSR_A_RAIZ.v LSR_R_RAIZ.v LSR_TMP_RAIZ.v Periferico_raiz.v RAIZ.v SUM_C2_RAIZ.v tb_Periferico_raiz.v
@@ -203,7 +203,7 @@ Para visualizar en GTKWave, ejecutar en la terminal:
 gtkwave raiz.vcd &
 ```
 
-El testbench posee un numero predeterminado de prueba que puede ser cambiado; se encuentra en la línea 106 de este mismo archivo.
+El testbench posee un número predeterminado de prueba que puede ser cambiado; se encuentra en la línea 106 de este mismo archivo.
 
 
 
@@ -214,7 +214,7 @@ El testbench posee un numero predeterminado de prueba que puede ser cambiado; se
 
 Este módulo convierte un número binario de 16 bits a su representación en BCD (Binary-Coded Decimal) empleando el algoritmo Double Dabble (Shift-and-Add-3). funciona principalmente con el uso de corrimientos concatenados, comparador mediante el uso de un sumador en complemento a dos y una máquina de control que coordina las etapas.
 
-Se describe con mas detalle el funcionamiento del modulo mediante el uso de 3 diagramas, Diagrama de flujo, Datapath y diagrama de estados; a continuacion se anexan estos 3 diagramas.
+Se describe con más detalle el funcionamiento del módulo mediante el uso de 3 diagramas, Diagrama de flujo, Datapath y Diagrama de estados; a continuación se anexan estos 3 diagramas.
 
 <p align="center">
   <img src="./Diagramas%20de%20bloques/Diagrama%20de%20flujo%20BBCD.jpeg" width="350">
@@ -225,7 +225,7 @@ Se describe con mas detalle el funcionamiento del modulo mediante el uso de 3 di
 
 
 
-A modo de resumen, se especifica en la siguiente tabla las diferentes variables presentes en el diseño.
+A modo de resumen, se específica en la siguiente tabla las diferentes variables presentes en el diseño.
 
 | Señal      | I/O    | Bits | Descripción                     |
 | --------   | ------ | ---- | ------------------------------- |
@@ -251,9 +251,9 @@ Hay 8 archivos dentro de esta carpeta:
 
 - `CONTROL_BBCD.v` — Máquina de control del periférico. Genera señales de control para el correcto funcionamiento del periférico (basado en el diagrama de estados).
 
-- `LSR_BBCD.v` — modulo donde se va contruyendo el nuevo nuemero en BCD, se realizan corrimientos bit a bit y luego se compara el valor con un sumador en complemento a dos.
+- `LSR_BBCD.v` — Módulo donde se va contruyendo el nuevo número en BCD, se realizan corrimientos bit a bit y luego se compara el valor con un sumador en complemento a dos.
 
-- `SUM_C2_BBCD.v` —modulo donde se compara el valor de cada secccion del numero con 5 para saber si es mayor, menor o igual, si es mayor o igual en este mismo modulo se le suma 3 al numero actual.
+- `SUM_C2_BBCD.v` — Módulo donde se compara el valor de cada sección del número con 5 para saber si es mayor, menor o igual, si es mayor o igual en este mismo módulo se le suma 3 al número actual.
   
 - `testbench.v` — Módulo TESTBENCH para probar el funcionamiento del periférico. Crea un archivo .vcd que puede ser visualizado en GTKWave.
 
@@ -269,14 +269,14 @@ Para visualizar en GTKWave, ejecutar en la terminal:
 gtkwave tb_Periferico_BinarioABCD.vcd &
 ```
 
-El testbench posee un numero predeterminado de prueba que puede ser cambiado; se encuentra en la línea 107 de este mismo archivo.
+El testbench posee un número predeterminado de prueba que puede ser cambiado; se encuentra en la línea 107 de este mismo archivo.
 
 ---
 ### ARCHIVOS ADICIONALES PARA FUNCIONAMIENTO CALCULADORA 
 
 Los siguientes archivos son necesarios para el correcto funcionamiento de una calculadora por hardware implementada mediante el uso de periféricos de un procesador RISC-V. 
 
-- `Calculadora.S` — Archivo principal de la calculadora en Assembler, este se encarga de solicitar los numeros y el operador por consola, seguido de esto, redirigir la informacion a el modulo necesario y espera el resultado, una vez lo recibe, implime este reaultado y vuwlve a solicitar dos numeros y un operador.
+- `Calculadora.S` — Archivo principal de la calculadora en Assembler, este se encarga de solicitar los números y el operador por consola, seguido de esto, redirigir la información a el modulo necesario y espera el resultado, una vez lo recibe, imprime este resultado y vuelve a solicitar dos números y un operador.
 
 - `Makefile` — Este archivo se encarga de compilar todos los archivos .S y crear su respectivo .o para luego unir todos los archivos .o en un único archivo ejecutable RISC-V (firmware.elf)
   
