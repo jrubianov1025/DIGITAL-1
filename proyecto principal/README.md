@@ -5,7 +5,7 @@ En esta carpeta se encuentran 2 carpetas principales, una contiene el ejemplo su
 Cada unas de las carpetas contiene los siguientes módulos: 
 
 
-###  12 bits por pixel 
+### 🖼️🔴🟢🔵 12 bits por pixel 
 
 - `led_panel_4k.v` — Este es el módulo principal el cuál declara las variables de entrada y salida del módulo, además de llamar el resto de módulos necesarios.
   
@@ -22,12 +22,36 @@ Cada unas de las carpetas contiene los siguientes módulos:
 - `mux_led.v` — Este módulo selecciona qué bit de cada color (R,G,B) se va a enviar al panel LED, dependiendo del bitplane actual.
   
 
-###  Video
+###  📽️🔴🟢🔵 Video
 
-Para está parte del proyecto se utiliza fundamentalmente los módulos de la otra carpeta pero adaptada para video, es decir, los módulos descritos anteriormente (led_panel_4k.v, ctrl_lp4k.v, comp.v, count.v, lsr_led.v y mux_led.v. Adicionalmente, dentro de la carpeta contiene un archivo en python y por otro lado se modifica el módulo de memory para reproducir el video en la pantalla.
+- `Comparador.v` — Este módulo compara dos buses de entrada del mismo ancho y genera un 1 cuando ambos valores son iguales y 0 en caso contrario.
+  
+- `Contador.v` —  Contador descendente para llevar un registro de ciclos de ejecución realizados.
+  
+- `Control_video.v` — Este módulo es la máquina de estados, que se encarga de controlar el flujo completo de video hacia el panel LED. 
 
-- `gif_to_hex.py` — Este código de python se encarga de tomar el archivo .gif y pasarlo en formato .hex para que el módulo memory.v pueda trabajar con el mismo.
+- `Led_panel_video.v` — Módulo que funciona como el controlador principal para panel RGB basado en multiplexación y reproducción de video por frames.
+Este módulo sincroniza la lectura de memoria, la generación de clocks, el escaneo de filas/columnas y el envío de datos RGB hacia un panel LED.
 
-- `memory.v` — Este módulo implementa una memoria para almacenar imágenes estáticas o animaciones en formato .hex, permite manejar múltiples frames, calculando el tiempo entre ellos según la frecuencia del reloj y un delay configurable.
+- `Lsr_led.v` —
+
+- `Multiplexor.v` —
+
+- `led_panel_video.lpf` —
+
+- `led_panel_video_pnr.log` —
+
+- `memory_doble.v` —
+
+- `memory_principal.v` —
+
+- `sim` —
+
+- `synth.log` —
+
+- `tb_led_panel_video.v` —
+ 
+- `video.hex` —
+
 
 
