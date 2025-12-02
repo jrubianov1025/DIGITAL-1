@@ -28,9 +28,7 @@ A modo de resumen, se específica en la siguiente tabla las diferentes variables
 | `ROW`          | Output | Selección de la fila del panel    |              
 | `RGB0`         | Output | Canales del semipanel superior    |
 | `RGB1`         | Output | Canales del semipanel inferior    |         
-| `mem_w_data`   | Input  | Dirección a escribir en la memoria|
-| `mem_w_address`| Input  | Dato de 24 bits para almacenar    |
-| `we_a`         | Input  | Señal de habilitación de escritura|
+
 
 Dentro de la carpeta se encuentran los siguientes módulos:
 
