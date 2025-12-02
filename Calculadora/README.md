@@ -20,14 +20,13 @@ la estructura del proyecto se muestra acontinuación:
   ...
   SOC.v
 ```
-
-
-Dentro de cada una se incluyen:
+Para cada periferico se crearon los siguientes archivos:
 
 - Los módulos necesarios para su funcionamiento
 - Un módulo TOP
 - Un testbench para simulación
 - Archivo en assembler adicional utilizado por la calculadora completa
+- Periferico para su implementacion 
 
 Además, se encuentran 4 archivos adicionales necesarios para el funcionamiento de la calculadora.
 
@@ -61,7 +60,7 @@ A modo de resumen, se específica en la siguiente tabla las diferentes variables
 | `PP`     | Output | 32   | Resultado final                 |
 
 
-Hay 9 archivos dentro de esta carpeta:
+Hay 9 archivos relacionados a este Periferico:
 
 - `Multiplicador.S` — Archivo en Assembler con el objetivo de realizar la comunicación entre el periférico y el procesador.
 
@@ -124,7 +123,7 @@ A modo de resumen, se específica en la siguiente tabla las diferentes variables
 
 
 
-Hay 9 archivos dentro de esta carpeta:
+Hay 9 archivos relacionados a este Periferico:
 
 - `Divisor.S` — Archivo en Assembler con el objetivo de realizar la comunicación entre el periférico y el procesador.
 
@@ -189,7 +188,7 @@ A modo de resumen, se específica en la siguiente tabla las diferentes variables
 
 
 
-Hay 10 archivos dentro de esta carpeta:
+Hay 10 archivos relacionados a este Periferico:
 
 - `Raiz.S` — Archivo en Assembler con el objetivo de realizar la comunicación entre el periférico y el procesador.
 
@@ -259,7 +258,7 @@ A modo de resumen, se específica en la siguiente tabla las diferentes variables
 | `MIL`      | Output | 4    | MILES                           |
 
 
-Hay 8 archivos dentro de esta carpeta:
+Hay 8 archivos relacionados a este Periferico:
 
 - `B_BCD.S` — Archivo en Assembler con el objetivo de realizar la comunicación entre el periférico y el procesador.
 
