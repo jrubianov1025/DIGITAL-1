@@ -1,0 +1,351 @@
+Info: constraining clock net 'clk' to 25.00 MHz
+
+Info: Logic utilisation before packing:
+Info:     Total LUT4s:      5965/24288    24%
+Info:         logic LUTs:   5599/24288    23%
+Info:         carry LUTs:    366/24288     1%
+Info:           RAM LUTs:      0/ 3036     0%
+Info:          RAMW LUTs:      0/ 6072     0%
+
+Info:      Total DFFs:      1856/24288     7%
+
+Info: Packing IOs..
+Info: pin 'resetn$tr_io' constrained to Bel 'X6/Y50/PIOA'.
+Info: pin 'clk$tr_io' constrained to Bel 'X0/Y47/PIOC'.
+Info: pin 'TXD$tr_io' constrained to Bel 'X11/Y0/PIOA'.
+Info: pin 'RXD$tr_io' constrained to Bel 'X9/Y0/PIOB'.
+Info: pin 'LEDS$tr_io' constrained to Bel 'X4/Y50/PIOA'.
+Info: Packing constants..
+Info: Packing carries...
+Info: Packing LUTs...
+Info: Packing LUT5-7s...
+Info: Packing FFs...
+Info:     444 FFs paired with LUTs.
+Info: Generating derived timing constraints...
+Info: Promoting globals...
+Info:     promoting clock net clk$TRELLIS_IO_IN to global network
+Info: Checksum: 0xab60eb61
+
+Info: Device utilisation:
+Info: 	          TRELLIS_IO:     5/  197     2%
+Info: 	                DCCA:     1/   56     1%
+Info: 	              DP16KD:     4/   56     7%
+Info: 	          MULT18X18D:     0/   28     0%
+Info: 	              ALU54B:     0/   14     0%
+Info: 	             EHXPLLL:     0/    2     0%
+Info: 	             EXTREFB:     0/    1     0%
+Info: 	                DCUA:     0/    1     0%
+Info: 	           PCSCLKDIV:     0/    2     0%
+Info: 	             IOLOGIC:     0/  128     0%
+Info: 	            SIOLOGIC:     0/   69     0%
+Info: 	                 GSR:     0/    1     0%
+Info: 	               JTAGG:     0/    1     0%
+Info: 	                OSCG:     0/    1     0%
+Info: 	               SEDGA:     0/    1     0%
+Info: 	                 DTR:     0/    1     0%
+Info: 	             USRMCLK:     0/    1     0%
+Info: 	             CLKDIVF:     0/    4     0%
+Info: 	           ECLKSYNCB:     0/   10     0%
+Info: 	             DLLDELD:     0/    8     0%
+Info: 	              DDRDLL:     0/    4     0%
+Info: 	             DQSBUFM:     0/    8     0%
+Info: 	     TRELLIS_ECLKBUF:     0/    8     0%
+Info: 	        ECLKBRIDGECS:     0/    2     0%
+Info: 	                DCSC:     0/    2     0%
+Info: 	          TRELLIS_FF:  1856/24288     7%
+Info: 	        TRELLIS_COMB:  6087/24288    25%
+Info: 	        TRELLIS_RAMW:     0/ 3036     0%
+
+Info: Placed 5 cells based on constraints.
+Info: Creating initial analytic placement for 4216 cells, random placement wirelen = 230780.
+Info:     at initial placer iter 0, wirelen = 768
+Info:     at initial placer iter 1, wirelen = 820
+Info:     at initial placer iter 2, wirelen = 741
+Info:     at initial placer iter 3, wirelen = 775
+Info: Running main analytical placer, max placement attempts per cell = 7906276.
+Info:     at iteration #1, type ALL: wirelen solved = 778, spread = 39686, legal = 42826; time = 0.16s
+Info:     at iteration #2, type ALL: wirelen solved = 3688, spread = 23715, legal = 28321; time = 0.16s
+Info:     at iteration #3, type ALL: wirelen solved = 6810, spread = 20672, legal = 25476; time = 0.17s
+Info:     at iteration #4, type ALL: wirelen solved = 8276, spread = 20281, legal = 24940; time = 0.16s
+Info:     at iteration #5, type ALL: wirelen solved = 9379, spread = 19492, legal = 23769; time = 0.15s
+Info:     at iteration #6, type ALL: wirelen solved = 9777, spread = 19184, legal = 23329; time = 0.14s
+Info:     at iteration #7, type ALL: wirelen solved = 10488, spread = 18967, legal = 22986; time = 0.15s
+Info:     at iteration #8, type ALL: wirelen solved = 11123, spread = 18142, legal = 22801; time = 0.14s
+Info:     at iteration #9, type ALL: wirelen solved = 11266, spread = 17980, legal = 21994; time = 0.14s
+Info:     at iteration #10, type ALL: wirelen solved = 11941, spread = 17655, legal = 21706; time = 0.14s
+Info:     at iteration #11, type ALL: wirelen solved = 12291, spread = 17969, legal = 22029; time = 0.13s
+Info:     at iteration #12, type ALL: wirelen solved = 12695, spread = 18132, legal = 22308; time = 0.13s
+Info:     at iteration #13, type ALL: wirelen solved = 12756, spread = 17740, legal = 21853; time = 0.13s
+Info:     at iteration #14, type ALL: wirelen solved = 13179, spread = 17528, legal = 21827; time = 0.13s
+Info:     at iteration #15, type ALL: wirelen solved = 13158, spread = 17581, legal = 21710; time = 0.14s
+Info: HeAP Placer Time: 3.31s
+Info:   of which solving equations: 1.64s
+Info:   of which spreading cells: 0.29s
+Info:   of which strict legalisation: 0.55s
+
+Info: Running simulated annealing placer for refinement.
+Info:   at iteration #1: temp = 0.000000, timing cost = 3368, wirelen = 21706
+Info:   at iteration #5: temp = 0.000000, timing cost = 2503, wirelen = 18783
+Info:   at iteration #10: temp = 0.000000, timing cost = 4915, wirelen = 17766
+Info:   at iteration #15: temp = 0.000000, timing cost = 3826, wirelen = 17196
+Info:   at iteration #17: temp = 0.000000, timing cost = 3617, wirelen = 17081 
+Info: SA placement time 6.05s
+
+Info: Max frequency for clock '$glbnet$clk$TRELLIS_IO_IN': 41.72 MHz (PASS at 25.00 MHz)
+
+Info: Max delay <async>                           -> posedge $glbnet$clk$TRELLIS_IO_IN: 11.28 ns
+Info: Max delay posedge $glbnet$clk$TRELLIS_IO_IN -> <async>                          : 6.64 ns
+
+Info: Checksum: 0x0a0d1387
+Info: Routing globals...
+Info:     routing clock net $glbnet$clk$TRELLIS_IO_IN using global 0
+
+Info: Routing..
+Info: Setting up routing queue.
+Info: Routing 23045 arcs.
+Info:            |   (re-)routed arcs  |   delta    | remaining|       time spent     |
+Info:    IterCnt |  w/ripup   wo/ripup |  w/r  wo/r |      arcs| batch(sec) total(sec)|
+Info:       1000 |      183        816 |  183   816 |     22352|       0.34       0.34|
+Info:       2000 |      406       1593 |  223   777 |     21792|       0.12       0.46|
+Info:       3000 |      606       2393 |  200   800 |     21382|       0.12       0.58|
+Info:       4000 |      813       3186 |  207   793 |     20904|       0.12       0.71|
+Info:       5000 |     1043       3956 |  230   770 |     20536|       0.12       0.82|
+Info:       6000 |     1279       4720 |  236   764 |     20014|       0.12       0.94|
+Info:       7000 |     1527       5472 |  248   752 |     19597|       0.13       1.07|
+Info:       8000 |     1728       6271 |  201   799 |     18969|       0.13       1.19|
+Info:       9000 |     1972       7027 |  244   756 |     18475|       0.13       1.32|
+Info:      10000 |     2235       7764 |  263   737 |     18032|       0.12       1.45|
+Info:      11000 |     2506       8493 |  271   729 |     17816|       0.14       1.58|
+Info:      12000 |     2753       9246 |  247   753 |     17473|       0.13       1.72|
+Info:      13000 |     2981      10018 |  228   772 |     17173|       0.13       1.84|
+Info:      14000 |     3189      10810 |  208   792 |     16841|       0.13       1.98|
+Info:      15000 |     3466      11533 |  277   723 |     16870|       0.15       2.13|
+Info:      16000 |     3649      12350 |  183   817 |     16447|       0.14       2.27|
+Info:      17000 |     3969      13030 |  320   680 |     16178|       0.18       2.45|
+Info:      18000 |     4241      13758 |  272   728 |     15972|       0.13       2.58|
+Info:      19000 |     4502      14497 |  261   739 |     15719|       0.17       2.74|
+Info:      20000 |     4786      15213 |  284   716 |     15341|       0.18       2.92|
+Info:      21000 |     5088      15911 |  302   698 |     14845|       0.15       3.07|
+Info:      22000 |     5409      16590 |  321   679 |     14445|       0.18       3.24|
+Info:      23000 |     5704      17295 |  295   705 |     14066|       0.16       3.40|
+Info:      24000 |     5993      18006 |  289   711 |     13696|       0.15       3.55|
+Info:      25000 |     6285      18714 |  292   708 |     13274|       0.15       3.70|
+Info:      26000 |     6623      19376 |  338   662 |     13074|       0.17       3.87|
+Info:      27000 |     6903      20096 |  280   720 |     12835|       0.18       4.05|
+Info:      28000 |     7163      20836 |  260   740 |     12700|       0.16       4.21|
+Info:      29000 |     7464      21535 |  301   699 |     12185|       0.16       4.37|
+Info:      30000 |     7790      22209 |  326   674 |     11683|       0.15       4.53|
+Info:      31000 |     8090      22869 |  300   660 |     11227|       0.16       4.68|
+Info:      32000 |     8351      23537 |  261   668 |     10635|       0.12       4.80|
+Info:      33000 |     8608      24176 |  257   639 |     10045|       0.12       4.92|
+Info:      34000 |     8819      24835 |  211   659 |      9521|       0.12       5.03|
+Info:      35000 |     8924      25493 |  105   658 |      8719|       0.10       5.13|
+Info:      36000 |     9095      26130 |  171   637 |      8111|       0.11       5.24|
+Info:      37000 |     9349      26717 |  254   587 |      7496|       0.13       5.37|
+Info:      38000 |     9589      27174 |  240   457 |      6865|       0.14       5.51|
+Info:      39000 |     9910      27706 |  321   532 |      6487|       0.14       5.66|
+Info:      40000 |    10284      28300 |  374   594 |      6102|       0.16       5.82|
+Info:      41000 |    10556      29006 |  272   706 |      5460|       0.13       5.95|
+Info:      42000 |    10861      29686 |  305   680 |      4868|       0.14       6.09|
+Info:      43000 |    11162      30382 |  301   696 |      4246|       0.13       6.23|
+Info:      44000 |    11522      31021 |  360   639 |      3669|       0.15       6.37|
+Info:      45000 |    11858      31672 |  336   651 |      3078|       0.14       6.51|
+Info:      46000 |    12193      32322 |  335   650 |      2502|       0.14       6.66|
+Info:      47000 |    12500      32974 |  307   652 |      1924|       0.14       6.80|
+Info:      48000 |    12608      33616 |  108   642 |      1044|       0.09       6.89|
+Info:      49000 |    12705      34130 |   97   514 |       184|       0.12       7.01|
+Info:      49294 |    12770      34270 |   65   140 |         0|       0.06       7.07|
+Info: Routing complete.
+Info: Router1 time 7.07s
+Info: Checksum: 0x37d54939
+
+Info: Critical path report for clock '$glbnet$clk$TRELLIS_IO_IN' (posedge -> posedge):
+Info: curr total
+Info:  0.5  0.5  Source CPU.instr_TRELLIS_FF_Q_26.Q
+Info:  1.1  1.7    Net CPU.instr[5] (14,22) -> (17,22)
+Info:                Sink CPU.LTU_LUT4_D_Z_PFUMX_ALUT_Z_L6MUX21_D1_Z_LUT4_Z_1.D
+Info:                Defined in:
+Info:                  /home/juan-diego/miniconda3/envs/digital/bin/../share/yosys/ecp5/cells_map.v:108.23-108.24
+Info:  0.2  1.9  Source CPU.LTU_LUT4_D_Z_PFUMX_ALUT_Z_L6MUX21_D1_Z_LUT4_Z_1.F
+Info:  1.8  3.7    Net CPU.LTU_LUT4_D_Z_PFUMX_ALUT_Z_L6MUX21_D1_Z[2] (17,22) -> (18,31)
+Info:                Sink CPU.aluIn2_LUT4_Z_23_D_PFUMX_Z_ALUT_LUT4_Z.B
+Info:                Defined in:
+Info:                  /home/juan-diego/miniconda3/envs/digital/bin/../share/yosys/ecp5/cells_map.v:108.23-108.24
+Info:  0.2  3.9  Source CPU.aluIn2_LUT4_Z_23_D_PFUMX_Z_ALUT_LUT4_Z.F
+Info:  0.0  3.9    Net CPU.aluIn2_LUT4_Z_23_D_PFUMX_Z_ALUT (18,31) -> (18,31)
+Info:                Sink CPU.aluIn2_LUT4_Z_23_D_PFUMX_Z_BLUT_LUT4_Z.F1
+Info:                Defined in:
+Info:                  /home/juan-diego/miniconda3/envs/digital/bin/../share/yosys/ecp5/cells_map.v:133.22-133.24
+Info:  0.2  4.1  Source CPU.aluIn2_LUT4_Z_23_D_PFUMX_Z_BLUT_LUT4_Z.OFX
+Info:  1.5  5.6    Net CPU.aluIn2_LUT4_Z_16_D[14] (18,31) -> (18,19)
+Info:                Sink CPU.aluIn2_LUT4_Z_23.D
+Info:                Defined in:
+Info:                  /home/juan-diego/miniconda3/envs/digital/bin/../share/yosys/ecp5/cells_map.v:108.23-108.24
+Info:  0.2  5.9  Source CPU.aluIn2_LUT4_Z_23.F
+Info:  1.1  6.9    Net CPU.aluIn2[14] (18,19) -> (18,21)
+Info:                Sink CPU.aluPlus_CCU2C_S0_12$CCU2_COMB0.B
+Info:                Defined in:
+Info:                  SOC.v:20.14-30.5
+Info:                  cores/cpu/femtorv32_quark.v:119.16-119.22
+Info:  0.4  7.4  Source CPU.aluPlus_CCU2C_S0_12$CCU2_COMB0.FCO
+Info:  0.0  7.4    Net CPU.aluPlus_CCU2C_S0_12$CCU2_FCI_INT (18,21) -> (18,21)
+Info:                Sink CPU.aluPlus_CCU2C_S0_12$CCU2_COMB1.FCI
+Info:  0.0  7.4  Source CPU.aluPlus_CCU2C_S0_12$CCU2_COMB1.FCO
+Info:  0.0  7.4    Net CPU.aluPlus_CCU2C_S0_3_COUT[15] (18,21) -> (18,21)
+Info:                Sink CPU.aluPlus_CCU2C_S0_11$CCU2_COMB0.FCI
+Info:                Defined in:
+Info:                  SOC.v:20.14-30.5
+Info:                  cores/cpu/femtorv32_quark.v:128.26-128.41
+Info:                  /home/juan-diego/miniconda3/envs/digital/bin/../share/yosys/ecp5/arith_map.v:63.22-63.23
+Info:  0.1  7.5  Source CPU.aluPlus_CCU2C_S0_11$CCU2_COMB0.FCO
+Info:  0.0  7.5    Net CPU.aluPlus_CCU2C_S0_11$CCU2_FCI_INT (18,21) -> (18,21)
+Info:                Sink CPU.aluPlus_CCU2C_S0_11$CCU2_COMB1.FCI
+Info:  0.0  7.5  Source CPU.aluPlus_CCU2C_S0_11$CCU2_COMB1.FCO
+Info:  0.0  7.5    Net CPU.aluPlus_CCU2C_S0_3_COUT[17] (18,21) -> (18,21)
+Info:                Sink CPU.aluPlus_CCU2C_S0_10$CCU2_COMB0.FCI
+Info:                Defined in:
+Info:                  SOC.v:20.14-30.5
+Info:                  cores/cpu/femtorv32_quark.v:128.26-128.41
+Info:                  /home/juan-diego/miniconda3/envs/digital/bin/../share/yosys/ecp5/arith_map.v:63.22-63.23
+Info:  0.1  7.5  Source CPU.aluPlus_CCU2C_S0_10$CCU2_COMB0.FCO
+Info:  0.0  7.5    Net CPU.aluPlus_CCU2C_S0_10$CCU2_FCI_INT (18,21) -> (18,21)
+Info:                Sink CPU.aluPlus_CCU2C_S0_10$CCU2_COMB1.FCI
+Info:  0.0  7.5  Source CPU.aluPlus_CCU2C_S0_10$CCU2_COMB1.FCO
+Info:  0.0  7.5    Net CPU.aluPlus_CCU2C_S0_3_COUT[19] (18,21) -> (18,21)
+Info:                Sink CPU.aluPlus_CCU2C_S0_9$CCU2_COMB0.FCI
+Info:                Defined in:
+Info:                  SOC.v:20.14-30.5
+Info:                  cores/cpu/femtorv32_quark.v:128.26-128.41
+Info:                  /home/juan-diego/miniconda3/envs/digital/bin/../share/yosys/ecp5/arith_map.v:63.22-63.23
+Info:  0.1  7.6  Source CPU.aluPlus_CCU2C_S0_9$CCU2_COMB0.FCO
+Info:  0.0  7.6    Net CPU.aluPlus_CCU2C_S0_9$CCU2_FCI_INT (18,21) -> (18,21)
+Info:                Sink CPU.aluPlus_CCU2C_S0_9$CCU2_COMB1.FCI
+Info:  0.0  7.6  Source CPU.aluPlus_CCU2C_S0_9$CCU2_COMB1.FCO
+Info:  0.0  7.6    Net CPU.aluPlus_CCU2C_S0_3_COUT[21] (18,21) -> (19,21)
+Info:                Sink CPU.aluPlus_CCU2C_S0_8$CCU2_COMB0.FCI
+Info:                Defined in:
+Info:                  SOC.v:20.14-30.5
+Info:                  cores/cpu/femtorv32_quark.v:128.26-128.41
+Info:                  /home/juan-diego/miniconda3/envs/digital/bin/../share/yosys/ecp5/arith_map.v:63.22-63.23
+Info:  0.1  7.7  Source CPU.aluPlus_CCU2C_S0_8$CCU2_COMB0.FCO
+Info:  0.0  7.7    Net CPU.aluPlus_CCU2C_S0_8$CCU2_FCI_INT (19,21) -> (19,21)
+Info:                Sink CPU.aluPlus_CCU2C_S0_8$CCU2_COMB1.FCI
+Info:  0.0  7.7  Source CPU.aluPlus_CCU2C_S0_8$CCU2_COMB1.FCO
+Info:  0.0  7.7    Net CPU.aluPlus_CCU2C_S0_3_COUT[23] (19,21) -> (19,21)
+Info:                Sink CPU.aluPlus_CCU2C_S0_7$CCU2_COMB0.FCI
+Info:                Defined in:
+Info:                  SOC.v:20.14-30.5
+Info:                  cores/cpu/femtorv32_quark.v:128.26-128.41
+Info:                  /home/juan-diego/miniconda3/envs/digital/bin/../share/yosys/ecp5/arith_map.v:63.22-63.23
+Info:  0.1  7.8  Source CPU.aluPlus_CCU2C_S0_7$CCU2_COMB0.FCO
+Info:  0.0  7.8    Net CPU.aluPlus_CCU2C_S0_7$CCU2_FCI_INT (19,21) -> (19,21)
+Info:                Sink CPU.aluPlus_CCU2C_S0_7$CCU2_COMB1.FCI
+Info:  0.0  7.8  Source CPU.aluPlus_CCU2C_S0_7$CCU2_COMB1.FCO
+Info:  0.0  7.8    Net CPU.aluPlus_CCU2C_S0_3_COUT[25] (19,21) -> (19,21)
+Info:                Sink CPU.aluPlus_CCU2C_S0_6$CCU2_COMB0.FCI
+Info:                Defined in:
+Info:                  SOC.v:20.14-30.5
+Info:                  cores/cpu/femtorv32_quark.v:128.26-128.41
+Info:                  /home/juan-diego/miniconda3/envs/digital/bin/../share/yosys/ecp5/arith_map.v:63.22-63.23
+Info:  0.1  7.8  Source CPU.aluPlus_CCU2C_S0_6$CCU2_COMB0.FCO
+Info:  0.0  7.8    Net CPU.aluPlus_CCU2C_S0_6$CCU2_FCI_INT (19,21) -> (19,21)
+Info:                Sink CPU.aluPlus_CCU2C_S0_6$CCU2_COMB1.FCI
+Info:  0.0  7.8  Source CPU.aluPlus_CCU2C_S0_6$CCU2_COMB1.FCO
+Info:  0.0  7.8    Net CPU.aluPlus_CCU2C_S0_3_COUT[27] (19,21) -> (19,21)
+Info:                Sink CPU.aluPlus_CCU2C_S0_5$CCU2_COMB0.FCI
+Info:                Defined in:
+Info:                  SOC.v:20.14-30.5
+Info:                  cores/cpu/femtorv32_quark.v:128.26-128.41
+Info:                  /home/juan-diego/miniconda3/envs/digital/bin/../share/yosys/ecp5/arith_map.v:63.22-63.23
+Info:  0.1  7.9  Source CPU.aluPlus_CCU2C_S0_5$CCU2_COMB0.FCO
+Info:  0.0  7.9    Net CPU.aluPlus_CCU2C_S0_5$CCU2_FCI_INT (19,21) -> (19,21)
+Info:                Sink CPU.aluPlus_CCU2C_S0_5$CCU2_COMB1.FCI
+Info:  0.4  8.3  Source CPU.aluPlus_CCU2C_S0_5$CCU2_COMB1.F
+Info:  1.1  9.4    Net CPU.aluPlus[29] (19,21) -> (21,23)
+Info:                Sink CPU.aluIn2_LUT4_Z_1_D_LUT4_Z.B
+Info:                Defined in:
+Info:                  SOC.v:20.14-30.5
+Info:                  cores/cpu/femtorv32_quark.v:128.16-128.23
+Info:  0.2  9.7  Source CPU.aluIn2_LUT4_Z_1_D_LUT4_Z.F
+Info:  1.0 10.7    Net CPU.aluIn2_LUT4_Z_1_D[1] (21,23) -> (21,24)
+Info:                Sink CPU.writeBackData_L6MUX21_Z_2_D0_L6MUX21_Z_D0_PFUMX_Z_BLUT_LUT4_Z_D_LUT4_Z_B_L6MUX21_Z_D0_L6MUX21_Z_D0_PFUMX_Z_ALUT_LUT4_Z.B
+Info:                Defined in:
+Info:                  /home/juan-diego/miniconda3/envs/digital/bin/../share/yosys/ecp5/cells_map.v:108.23-108.24
+Info:  0.2 10.9  Source CPU.writeBackData_L6MUX21_Z_2_D0_L6MUX21_Z_D0_PFUMX_Z_BLUT_LUT4_Z_D_LUT4_Z_B_L6MUX21_Z_D0_L6MUX21_Z_D0_PFUMX_Z_ALUT_LUT4_Z.F
+Info:  0.0 10.9    Net CPU.writeBackData_L6MUX21_Z_2_D0_L6MUX21_Z_D0_PFUMX_Z_BLUT_LUT4_Z_D_LUT4_Z_B_L6MUX21_Z_D0_L6MUX21_Z_D0_PFUMX_Z_ALUT (21,24) -> (21,24)
+Info:                Sink CPU.writeBackData_L6MUX21_Z_2_D0_L6MUX21_Z_D0_PFUMX_Z_BLUT_LUT4_Z_D_LUT4_Z_B_L6MUX21_Z_D0_L6MUX21_Z_D0_PFUMX_Z_BLUT_LUT4_Z.F1
+Info:                Defined in:
+Info:                  /home/juan-diego/miniconda3/envs/digital/bin/../share/yosys/ecp5/cells_map.v:157.22-157.24
+Info:  0.2 11.1  Source CPU.writeBackData_L6MUX21_Z_2_D0_L6MUX21_Z_D0_PFUMX_Z_BLUT_LUT4_Z_D_LUT4_Z_B_L6MUX21_Z_D0_L6MUX21_Z_D0_PFUMX_Z_BLUT_LUT4_Z.OFX
+Info:  0.0 11.1    Net CPU.writeBackData_L6MUX21_Z_2_D0_L6MUX21_Z_D0_PFUMX_Z_BLUT_LUT4_Z_D_LUT4_Z_B_L6MUX21_Z_D0_L6MUX21_Z_D0 (21,24) -> (21,24)
+Info:                Sink CPU.writeBackData_L6MUX21_Z_2_D0_L6MUX21_Z_D0_PFUMX_Z_BLUT_LUT4_Z_D_LUT4_Z_B_L6MUX21_Z_D0_L6MUX21_Z_D1_PFUMX_Z_ALUT_LUT4_Z.FXA
+Info:                Defined in:
+Info:                  /home/juan-diego/miniconda3/envs/digital/bin/../share/yosys/ecp5/cells_map.v:157.50-157.52
+Info:  0.2 11.3  Source CPU.writeBackData_L6MUX21_Z_2_D0_L6MUX21_Z_D0_PFUMX_Z_BLUT_LUT4_Z_D_LUT4_Z_B_L6MUX21_Z_D0_L6MUX21_Z_D1_PFUMX_Z_ALUT_LUT4_Z.OFX
+Info:  0.0 11.3    Net CPU.writeBackData_L6MUX21_Z_2_D0_L6MUX21_Z_D0_PFUMX_Z_BLUT_LUT4_Z_D_LUT4_Z_B_L6MUX21_Z_D0 (21,24) -> (21,24)
+Info:                Sink CPU.writeBackData_L6MUX21_Z_2_D0_L6MUX21_Z_D0_PFUMX_Z_BLUT_LUT4_Z_D_LUT4_Z_B_L6MUX21_Z_D1_L6MUX21_Z_D0_PFUMX_Z_ALUT_LUT4_Z.FXA
+Info:                Defined in:
+Info:                  /home/juan-diego/miniconda3/envs/digital/bin/../share/yosys/ecp5/cells_map.v:157.66-157.68
+Info:  0.2 11.6  Source CPU.writeBackData_L6MUX21_Z_2_D0_L6MUX21_Z_D0_PFUMX_Z_BLUT_LUT4_Z_D_LUT4_Z_B_L6MUX21_Z_D1_L6MUX21_Z_D0_PFUMX_Z_ALUT_LUT4_Z.OFX
+Info:  1.3 12.9    Net CPU.writeBackData_L6MUX21_Z_2_D0_L6MUX21_Z_D0_PFUMX_Z_BLUT_LUT4_Z_D_LUT4_Z_B[0] (21,24) -> (24,30)
+Info:                Sink CPU.writeBackData_L6MUX21_Z_2_D0_L6MUX21_Z_D0_PFUMX_Z_BLUT_LUT4_Z_D_LUT4_Z.B
+Info:                Defined in:
+Info:                  /home/juan-diego/miniconda3/envs/digital/bin/../share/yosys/ecp5/cells_map.v:108.23-108.24
+Info:  0.2 13.1  Source CPU.writeBackData_L6MUX21_Z_2_D0_L6MUX21_Z_D0_PFUMX_Z_BLUT_LUT4_Z_D_LUT4_Z.F
+Info:  1.2 14.4    Net CPU.writeBackData_L6MUX21_Z_2_D0_L6MUX21_Z_D0_PFUMX_Z_BLUT_LUT4_Z_D[3] (24,30) -> (27,30)
+Info:                Sink CPU.writeBackData_L6MUX21_Z_2_D1_L6MUX21_Z_D1_PFUMX_Z_ALUT_LUT4_Z.D
+Info:                Defined in:
+Info:                  /home/juan-diego/miniconda3/envs/digital/bin/../share/yosys/ecp5/cells_map.v:108.23-108.24
+Info:  0.2 14.6  Source CPU.writeBackData_L6MUX21_Z_2_D1_L6MUX21_Z_D1_PFUMX_Z_ALUT_LUT4_Z.F
+Info:  0.0 14.6    Net CPU.writeBackData_L6MUX21_Z_2_D1_L6MUX21_Z_D1_PFUMX_Z_ALUT (27,30) -> (27,30)
+Info:                Sink CPU.writeBackData_L6MUX21_Z_2_D1_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z.F1
+Info:                Defined in:
+Info:                  /home/juan-diego/miniconda3/envs/digital/bin/../share/yosys/ecp5/cells_map.v:157.46-157.48
+Info:  0.2 14.8  Source CPU.writeBackData_L6MUX21_Z_2_D1_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z.OFX
+Info:  0.0 14.8    Net CPU.writeBackData_L6MUX21_Z_2_D1_L6MUX21_Z_D1 (27,30) -> (27,30)
+Info:                Sink CPU.writeBackData_L6MUX21_Z_2_D1_L6MUX21_Z_D1_PFUMX_Z_ALUT_LUT4_Z.FXB
+Info:                Defined in:
+Info:                  /home/juan-diego/miniconda3/envs/digital/bin/../share/yosys/ecp5/cells_map.v:157.62-157.64
+Info:  0.2 15.0  Source CPU.writeBackData_L6MUX21_Z_2_D1_L6MUX21_Z_D1_PFUMX_Z_ALUT_LUT4_Z.OFX
+Info:  0.0 15.0    Net CPU.writeBackData_L6MUX21_Z_2_D1 (27,30) -> (27,30)
+Info:                Sink CPU.writeBackData_L6MUX21_Z_2_D1_L6MUX21_Z_D0_PFUMX_Z_ALUT_LUT4_Z.FXB
+Info:                Defined in:
+Info:                  /home/juan-diego/miniconda3/envs/digital/bin/../share/yosys/ecp5/cells_map.v:157.70-157.72
+Info:  0.2 15.3  Source CPU.writeBackData_L6MUX21_Z_2_D1_L6MUX21_Z_D0_PFUMX_Z_ALUT_LUT4_Z.OFX
+Info:  0.9 16.2    Net CPU.writeBackData[29] (27,30) -> (26,29)
+Info:                Sink CPU.registerFile[31]_TRELLIS_FF_Q_2.M
+Info:                Defined in:
+Info:                  SOC.v:20.14-30.5
+Info:                  cores/cpu/femtorv32_quark.v:226.16-226.29
+Info:  0.0 16.2  Setup CPU.registerFile[31]_TRELLIS_FF_Q_2.M
+Info: 5.0 ns logic, 11.2 ns routing
+
+Info: Critical path report for cross-domain path '<async>' -> 'posedge $glbnet$clk$TRELLIS_IO_IN':
+Info: curr total
+Info:  0.0  0.0  Source resetn$tr_io.O
+Info:  2.7  2.7    Net resetn$TRELLIS_IO_IN (6,50) -> (12,27)
+Info:                Sink CPU.state_LUT4_D.C
+Info:                Defined in:
+Info:                  SOC.v:4.17-4.23
+Info:  0.2  3.0  Source CPU.state_LUT4_D.F
+Info:  2.9  5.8    Net CPU.rs1_TRELLIS_FF_Q_CE (12,27) -> (28,6)
+Info:                Sink CPU.rs2_TRELLIS_FF_Q_8.CE
+Info:  0.0  5.8  Setup CPU.rs2_TRELLIS_FF_Q_8.CE
+Info: 0.2 ns logic, 5.6 ns routing
+
+Info: Critical path report for cross-domain path 'posedge $glbnet$clk$TRELLIS_IO_IN' -> '<async>':
+Info: curr total
+Info:  0.5  0.5  Source LEDS_TRELLIS_FF_Q.Q
+Info:  3.4  4.0    Net LEDS$TRELLIS_IO_OUT (3,9) -> (4,50)
+Info:                Sink LEDS$tr_io.I
+Info:                Defined in:
+Info:                  SOC.v:119.6-131.5
+Info:                  cores/uart/perip_uart.v:21.11-21.20
+Info: 0.5 ns logic, 3.4 ns routing
+
+Info: Max frequency for clock '$glbnet$clk$TRELLIS_IO_IN': 61.79 MHz (PASS at 25.00 MHz)
+
+Info: Max delay <async>                           -> posedge $glbnet$clk$TRELLIS_IO_IN: 5.82 ns
+Info: Max delay posedge $glbnet$clk$TRELLIS_IO_IN -> <async>                          : 3.97 ns
+
+Info: Program finished normally.
