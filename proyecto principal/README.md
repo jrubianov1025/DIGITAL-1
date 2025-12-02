@@ -2,12 +2,12 @@
 
 En esta carpeta se encuentran 2 carpetas principales, una contiene el ejemplo suministrado por el docente la cual contiene los módulos necesarios para proyectar una imagen estática de 12 bits por pixel en una pantalla led 64x64, y la otra carpeta corresponde a nuestro proyecto en donde en vez de proyectar una imágen estática proyectamos un video.
 
-Cada unas de las carpetas contiene los siguientes módulos: 
-
 
 ### 🖼️🔴🟢🔵 12 bits por pixel 
 
-Se describe con más detalle el funcionamiento del módulo mediante el uso de 3 diagramas, Diagrama de flujo, Datapath y Diagrama de estados; a continuación se anexan estos 3 diagramas.
+Está carpeta contiene los módulos necesarios para proyectar una imagen estática en la pantalla led, junto con un archivo de imagen .hex en donde se encuentra la informaciòn de la imagen que se va a reproducir.
+
+Se describe con más detalle el funcionamiento del módulo mediante el uso de 3 diagramas, Diagrama de flujo, Datapth y Diagrama de estados; a continuación se anexan estos 3 diagramas.
 
 <p align="center">
   <img src="./Diagramas%20de%20bloques/Diagrama%20de%20flujo%20Panel%20led%2012%20bits.jpeg" width="350">
@@ -50,6 +50,7 @@ Dentro de la carpeta se encuentran los siguientes módulos:
 Los siguientes archivos son necesarios para el correcto funcionamiento de la pantalla LED.
 
 - `Makefile` — Este archivo gestiona la compilación y simulación de los módulos necesarios para el funcionamiento de la pantalla.
+- `image.hex` — Este archivo contiene la información de la imagen que se quiere reproducir. 
 
 
 ###  📽️🔴🟢🔵 Video
