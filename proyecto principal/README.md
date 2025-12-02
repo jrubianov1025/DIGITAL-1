@@ -7,6 +7,31 @@ Cada unas de las carpetas contiene los siguientes módulos:
 
 ### 🖼️🔴🟢🔵 12 bits por pixel 
 
+Se describe con mas detalle el funcionamiento del modulo mediante el uso de 3 diagramas, Diagrama de flujo, Datapath y Diagrama de estados; a continuación se anexan estos 3 diagramas.
+
+<p align="center">
+  <img src="./Diagramas%20de%20bloques/Diagrama%20de%20flujo%20MULT.jpeg" width="350">
+  <img src="./Diagramas%20de%20bloques/D_ESTADOS%20MULT.jpeg" width="350"> 
+  <img src="./Diagramas%20de%20bloques/Camino%20de%20datos%20MULT.jpeg" width="350">
+</p>
+
+A modo de resumen, se específica en la siguiente tabla las diferentes variables presentes en el diseño.
+
+| Señal          | I/O    | Descripción                       |
+| -------------- | ------ | --------------------------------- |
+| `clk`          | Input  | Señal de reloj                    |
+| `rst`          | Input  | Reset síncrono para inicializar   |
+| `init`         | Input  | Señal de inicio                   |
+| `LP_CLK`       | Output | Desplaza datos a los registros    |
+| `LATCH`        | Output | Transfiere los datos              |
+| `NOE`          | Output | Habilita la visualización         |
+| `ROW`          | Output | Selección de la fila del panel    |              
+| `RGB0`         | Output | Canales del semipanel superior    |
+| `RGB1`         | Output | Canales del semipanel inferior    |         
+| `mem_w_data`   | Input  | Dirección a escribir en la memoria|
+| `mem_w_address`| Input  | Dato de 24 bits para almacenar    |
+| `we_a`         | Input  | Señal de habilitación de escritura|
+
 - `led_panel_4k.v` — Este es el módulo principal el cuál declara las variables de entrada y salida del módulo, además de llamar el resto de módulos necesarios.
   
 - `ctrl_lp4k.v` — Máquina de control del periférico. Genera señales de control para el correcto funcionamiento del periférico.
