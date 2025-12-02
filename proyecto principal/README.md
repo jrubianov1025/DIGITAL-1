@@ -91,7 +91,7 @@ Este módulo sincroniza la lectura de memoria, la generación de clocks, el esca
 
 - `Multiplexor.v` — Este módulo implementa un multiplexor de 4 a 1 que selecciona, según el índice sel, un bit específico de cada uno de los seis canales de color provenientes de dos píxeles (RGB0 y RGB1).
 
-- `led_panel_video.lpf` — Este archivo define las restricciones físicas y temporales del diseño para la FPGA, asignando cada señal del módulo led_panel_video a un pin específico del dispositivo utilizado (Intel Cyclone IV E: 5E-75A), configurando sus características eléctricas.
+- `led_panel_video.lpf` — Este archivo define las restricciones físicas y temporales del diseño para la FPGA, asignando cada señal del módulo led_panel_video a un pin específico del dispositivo utilizado (Colorlight IV E: 5E-75A), configurando sus características eléctricas.
 
 - `led_panel_video_pnr.log` — Este archivo muestra el uso de recursos de la FPGA cuando se está reproduciendo el video.
 
