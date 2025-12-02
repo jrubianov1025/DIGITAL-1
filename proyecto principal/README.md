@@ -32,6 +32,8 @@ A modo de resumen, se específica en la siguiente tabla las diferentes variables
 | `mem_w_address`| Input  | Dato de 24 bits para almacenar    |
 | `we_a`         | Input  | Señal de habilitación de escritura|
 
+Dentro de la carpeta se encuentran los siguientes módulos:
+
 - `led_panel_4k.v` — Este es el módulo principal el cuál declara las variables de entrada y salida del módulo, además de llamar el resto de módulos necesarios.
   
 - `ctrl_lp4k.v` — Máquina de control del periférico. Genera señales de control para el correcto funcionamiento del periférico.
