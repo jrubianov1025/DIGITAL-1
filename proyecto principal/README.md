@@ -68,6 +68,14 @@ Para visualizar en GTKWave, ejecutar en la terminal:
 gtkwave tb_led_panel_video.vcd &
 ```
 
+Adicionalmente, dentro de la carpeta Video, hay dos archivos y dos carpetas más. Las carpetas contienen las frames que componen cada video, en formato .png. Por otro lado, se muestra:
+
+- `video_to_hex.py` — Este código se encarga de convertir cada imagen en un arreglo RGB y genera un archivo video.hex donde cada línea contiene tres bytes obtenidos al empaquetar dos píxeles verticalmente alineados con sus canales reducidos a 4 bits.
+  
+- `video.hex` —  Este archivo contiene la información necesaria para la reproducción del video en formato hexadecimal.
+  
+
+
 
 
 
