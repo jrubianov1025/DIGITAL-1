@@ -1,7 +1,27 @@
 
-## 📘 Descripción de los módulos
+## 📘 Descripción general
 
-En esta carpeta se encuentran 4 carpetas, una para cada periférico.
+En esta carpeta se encuentran todos los archivos necesarios para el correcto funcionamiento de una calculadora.
+la estructura del proyecto se muestra acontinuación: 
+
+```Bash
+\Calculadora
+  \firmware
+    \asm
+      archivos .S cada periferico
+      calculator.S
+  \rtl
+    \cores
+      ...
+      \binario-BCD
+      \divisor
+      \multiplicador
+      \raiz
+  ...
+  SOC.v
+```
+
+
 Dentro de cada una se incluyen:
 
 - Los módulos necesarios para su funcionamiento
