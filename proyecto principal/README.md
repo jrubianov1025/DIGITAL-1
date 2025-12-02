@@ -36,9 +36,8 @@ Dentro de la carpeta se encuentran los siguientes módulos:
   
 - `ctrl_lp4k.v` — Máquina de control del periférico. Genera señales de control para el correcto funcionamiento del periférico.
 
-- `comp.v` — Es un comparador de dos números binarios del mismo ancho (in1 e in2) y activa la señal out = 1 cuando son iguales, se usa en el control del panel para detectar cuando se cumplen ciertos tiempos o límites.
-  
-- `count.v` — Es un contador ascendente, el cuál permite recorrer las filas y columnas, controlar cuánto tiempo se enciende el bit actual y manejar los niveles de brillo (bitplanes).
+- `comp.v` — Es un comparador utilizado para controlar el tiempo de exposiòn de cada bit de color 
+- `count.v` — Es un contador ascendente genérico, el cuál se instancia para recorrer las filas y columnas, controlar cuánto tiempo se enciende el bit actual y manejar los niveles de brillo (bitplanes).
 
 - `lsr_led.v` — Este módulo genera el valor delay que se compara con el contador count_delay para controlar cuanto tiempo debe estar encendida la fila para cada bit de brillo.
 
