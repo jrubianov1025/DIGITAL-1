@@ -7,7 +7,7 @@ Cada unas de las carpetas contiene los siguientes módulos:
 
 ### 🖼️🔴🟢🔵 12 bits por pixel 
 
-Se describe con mas detalle el funcionamiento del modulo mediante el uso de 3 diagramas, Diagrama de flujo, Datapath y Diagrama de estados; a continuación se anexan estos 3 diagramas.
+Se describe con más detalle el funcionamiento del módulo mediante el uso de 3 diagramas, Diagrama de flujo, Datapath y Diagrama de estados; a continuación se anexan estos 3 diagramas.
 
 <p align="center">
   <img src="./diagrama de flujo" width="350">
@@ -56,6 +56,30 @@ Los siguientes archivos son necesarios para el correcto funcionamiento de la pan
 
 
 ###  📽️🔴🟢🔵 Video
+
+Se describe con más detalle el funcionamiento del módulo mediante el uso de 3 diagramas, Diagrama de flujo, Datapath y Diagrama de estados; a continuación se anexan estos 3 diagramas.
+
+<p align="center">
+  <img src="./diagrama de flujo" width="350">
+  <img src="./diagrama de estados" width="350"> 
+  <img src="./data path" width="350">
+</p>
+
+A modo de resumen, se específica en la siguiente tabla las diferentes variables presentes en el diseño.
+
+| Señal          | I/O    | Descripción                       |
+| -------------- | ------ | --------------------------------- |
+| `clk`          | Input  | Señal de reloj                    |
+| `rst`          | Input  | Reset síncrono para inicializar   |
+| `init`         | Input  | Señal de inicio                   |
+| `LP_CLK`       | Output | Desplaza datos a los registros    |
+| `LATCH`        | Output | Transfiere los datos              |
+| `NOE`          | Output | Habilita la visualización         |
+| `ROW`          | Output | Selección de la fila del panel    |              
+| `RGB0`         | Output | Canales del semipanel superior    |
+| `RGB1`         | Output | Canales del semipanel inferior    |        
+
+Dentro de la carpeta se encuentran los siguientes módulos:
 
 - `Comparador.v` — Este módulo compara dos buses de entrada del mismo ancho y genera un 1 cuando ambos valores son iguales y 0 en caso contrario.
   
