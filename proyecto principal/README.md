@@ -36,7 +36,7 @@ Dentro de la carpeta se encuentran los siguientes módulos:
   
 - `ctrl_lp4k.v` — Máquina de control del periférico. Genera señales de control para el correcto funcionamiento del periférico.
 
-- `comp.v` — Es un comparador utilizado para controlar el tiempo de exposiòn de cada bit de color 
+- `comp.v` — Es un comparador utilizado para controlar el tiempo de exposiòn de cada bit de color.
 - `count.v` — Es un contador ascendente genérico, el cuál se instancia con parametros especificos para cada una de las necesidades, se utiliza para recorrer las filas y columnas, controlar cuánto tiempo se enciende el bit actual y manejar los niveles de brillo (bitplanes).
 
 - `lsr_led.v` — Este módulo genera el valor delay que se compara con el contador count_delay para controlar cuanto tiempo debe estar encendida la fila para cada bit de brillo.
@@ -78,11 +78,11 @@ A modo de resumen, se específica en la siguiente tabla las diferentes variables
 
 Dentro de la carpeta se encuentran los siguientes módulos:
 
-- `Comparador.v` — Este módulo compara dos buses de entrada del mismo ancho y genera un 1 cuando ambos valores son iguales y 0 en caso contrario.
+- `Comparador.v` — Es un comparador utilizado para controlar el tiempo de exposiòn de cada bit de color.
   
-- `Contador.v` —  Contador descendente para llevar un registro de ciclos de ejecución realizados.
+- `Contador.v` — Es un contador ascendente genérico, el cuál se instancia con parametros especificos para cada una de las necesidades, se utiliza para recorrer las filas y columnas, controlar cuánto tiempo se enciende el bit actual y manejar los niveles de brillo (bitplanes).
   
-- `Control_video.v` — Este módulo se encarga de controlar el flujo completo de video hacia el panel LED. 
+- `Control_video.v` — Máquina de control del periférico. Genera señales de control para el correcto funcionamiento del periférico.
 
 - `Led_panel_video.v` — Módulo que funciona como el controlador principal para panel RGB basado en multiplexación y reproducción de video por frames.
 Este módulo sincroniza la lectura de memoria, la generación de clocks, el escaneo de filas/columnas y el envío de datos RGB hacia un panel LED.
