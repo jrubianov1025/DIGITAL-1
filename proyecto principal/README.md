@@ -11,7 +11,7 @@ Se describe con más detalle el funcionamiento del módulo mediante el uso de 3 
 
 <p align="center">
   <img src="./Diagramas%20de%20bloques/Diagrama%20de%20flujo%20Panel%20led%2012%20bits.jpeg" width="350">
-  <img src="./Diagramas%20de%20bloques/D_estados%20Panel%20led%2012%20bits.jpeg" width="350"> 
+  <img src="./Diagramas%20de%20bloques/D_estados%20Panel%20led%2012%20bits .jpeg" width="350"> 
   <img src="./Diagramas%20de%20bloques/Camino%20de%20datos%20Panel%2012%20bits.jpeg" width="350">
 </p>
 
