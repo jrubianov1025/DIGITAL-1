@@ -60,9 +60,9 @@ Los siguientes archivos son necesarios para el correcto funcionamiento de la pan
 Se describe con más detalle el funcionamiento del módulo mediante el uso de 3 diagramas, Diagrama de flujo, Datapath y Diagrama de estados; a continuación se anexan estos 3 diagramas.
 
 <p align="center">
-  <img src="./diagrama de flujo" width="350">
-  <img src="./diagrama de estados" width="350"> 
-  <img src="./data path" width="350">
+  <img src="./Diagramas%20de%20bloques/Diagrama%20de%20flujo%20gif.jpeg" width="350">
+  <img src="./Diagramas%20de%20bloques/D_estados%20gif .jpeg" width="350"> 
+  <img src="./Diagramas%20de%20bloques/Camino%20de%20datos%20gif.jpeg" width="350">
 </p>
 
 A modo de resumen, se específica en la siguiente tabla las diferentes variables presentes en el diseño.
