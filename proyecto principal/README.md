@@ -20,7 +20,13 @@ Cada unas de las carpetas contiene los siguientes módulos:
 - `memory.v` — El módulo memory es el que almacena la imagen que se mostrará en el panel LED.
   
 - `mux_led.v` — Este módulo selecciona qué bit de cada color (R,G,B) se va a enviar al panel LED, dependiendo del bitplane actual.
-  
+
+- ### ARCHIVOS ADICIONALES PARA FUNCIONAMIENTO PANTALLA LED
+
+Los siguientes archivos son necesarios para el correcto funcionamiento de la pantalla LED.
+
+- `Makefile` — Este archivo gestiona la compilación y simulación de los módulos necesarios para el funcionamiento de la pantalla.
+
 
 ###  📽️🔴🟢🔵 Video
 
