@@ -324,3 +324,32 @@ Los siguientes archivos son necesarios para el correcto funcionamiento de una ca
 - `Makefile( carpeta rtl)` — Este archivo se encarga de unir todos los archivos .v en un archivo .SOC el cual va a la FPGA.
   
 - `SOC.v` — El SOC ejecuta el programa RISC-V y conecta el CPU con los periféricos hardware que realizan las operaciones, este ejecuta el programa del ensamblador, proporciona el BUS que conecta el RAM con los periféricos, convierte direcciones del CPU en un chip-select al periférico, controla los periféricos, selecciona que periférico envia datos al CPU, proporciona una interfaz UART para hablar con la PC y finalmente integra en un único sistema funcional lo que permite correr la calculadora totalmente en hardware.
+
+
+Cabe aclarar que el uso y la implementacion fueron realizados en una FPGA lattice ECP5 mas especificamente una colorlight 5A-75E, para poder ejecutar la calculadora es necesario Realizar los siguientes pasos:
+
+- Abrir una terminal en la carpeta asm y poner el siguiente comando
+
+```
+  make
+
+```
+
+- a continuacion en la carpeta rtl hay dos posibilidades:
+
+- si se busca simular basta con poner el comando 
+
+```
+  make sim_quark
+
+```
+este genera una simulacion de una entrada desde consola, posterior a esto se abre una ventana en gtkwave para poder analizar todo como en la siguiente imagen:
+
+
+
+Por otro lado si se busca ejecutar la calculadora es necesario poner el siguiente comando:
+
+```
+  make
+
+```
