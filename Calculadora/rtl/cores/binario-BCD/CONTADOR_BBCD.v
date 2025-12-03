@@ -9,7 +9,7 @@ module CONTADOR_BBCD (
 
 always @(posedge CLK) begin
     if (LD) begin
-        count <= 5'd16;
+        count <= 5'd15;
         Z <= 0;   // <-- limpiar bandera al cargar
     end
     else if (DEC && count != 0)
