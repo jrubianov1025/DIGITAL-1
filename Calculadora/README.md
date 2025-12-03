@@ -348,5 +348,5 @@ este genera una simulacion de una entrada desde consola, posterior a esto se abr
 Por otro lado si se busca ejecutar la calculadora es necesario poner el siguiente comando:
 
 ```
-  make
+  make configure_lattice
 ```
