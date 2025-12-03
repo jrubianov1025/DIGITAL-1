@@ -51,7 +51,7 @@ always @(posedge CLK) begin
 
     S_END1: begin
       count = count + 1;
-      if (count > 20)
+      if (count > 30)
       	NEXT_STATE = S_START;
       else
       	NEXT_STATE = S_END1;
