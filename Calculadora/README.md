@@ -157,7 +157,11 @@ gtkwave tb_Periferico_DIVISOR.vcd &
 
 El testbench posee dos números predeterminados de prueba que pueden ser cambiados; se encuentran en las líneas 101 y 102 de este mismo archivo.
 
+#### Limitaciones y posibles mejoras
 
+Este modulo NO pose ningun aviso o proteccion ante divisiones entre cero, por lo que fallaria o arrojaria un valor erroneo aleatorio. Por otro lado, tampoco acepta numeros negativos como un numero valido para realizar la operacion.
+
+Una posible mejora de forma eficiente es corroborar en el assembler de la calculadora el segundo numero si el oerador es / y el segundo numero es cero, Lanzar una advertencia rechazando esa operación
 
 ---
 
@@ -224,8 +228,11 @@ gtkwave raiz.vcd &
 
 El testbench posee un número predeterminado de prueba que puede ser cambiado; se encuentra en la línea 106 de este mismo archivo.
 
+#### Limitaciones y posibles mejoras
 
+Este modulo NO pose ningun aviso o proteccion ante numeros negativos, por lo que fallaria directamente.
 
+para poder solucionar esto es nesesario bloquear la opcion de usar numero negativos como numerador valido. si se buscara una calculadora que acepte numeros negativos, aun asi debera ser necesario bloquear esta opcion. 
 
 ---
 
@@ -289,6 +296,13 @@ gtkwave tb_Periferico_BinarioABCD.vcd &
 ```
 
 El testbench posee un número predeterminado de prueba que puede ser cambiado; se encuentra en la línea 107 de este mismo archivo.
+
+#### Limitaciones y posibles mejoras
+
+La entrada maxima posible es de 16 bits (65.535), sin embargo la salida en codigo BCD solo pose las opciones de unidades, decenas, centenas y miles donde cada una utiliza 4 bits para expresar un numero del 0 al 9 por lo que la salida maxima corresponde al valor 9999 una limitacion importante a la hora de optener un mayor rango de resultados posibles. 
+
+
+para poder solucionar esto es nesesario modificar el modulo de corrimiento concatenado agregando una variable mas, ademas de el sumador en complemento a dos y los cables necesarios para esto. la salida total corresponderia a un arreglo de 20 bits por lo que seria necesario modificar ese tamaño en el periferico. 
 
 ---
 ### ARCHIVOS ADICIONALES PARA FUNCIONAMIENTO CALCULADORA 
