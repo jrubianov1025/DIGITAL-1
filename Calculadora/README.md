@@ -228,7 +228,10 @@ Para visualizar en GTKWave, ejecutar en la terminal:
 gtkwave raiz.vcd &
 ```
 
-El testbench posee un número predeterminado de prueba que puede ser cambiado; se encuentra en la línea 106 de este mismo archivo.
+El testbench posee un número predeterminado de prueba que puede ser cambiado; se encuentra en la línea 106 de este mismo archivo. A continuacion se observan las señales mediante el uso de GTKwave
+
+<img width="1639" height="327" alt="imagen" src="https://github.com/user-attachments/assets/9f98efcd-e5b4-4e94-90a2-e36c5b880f7a" />
+
 
 #### Limitaciones y posibles mejoras
 
