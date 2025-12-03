@@ -345,7 +345,11 @@ Cabe aclarar que el uso y la implementacion fueron realizados en una FPGA lattic
 ```
 este genera una simulacion de una entrada desde consola, posterior a esto se abre una ventana en gtkwave para poder analizar todo como en la siguiente imagen:
 
-
+<p align="center">
+<img width="176" height="151" alt="imagen" src="https://github.com/user-attachments/assets/683e0fda-31fe-4c67-9533-37824a0cc9ab" />
+<img width="176" height="151" alt="imagen" src="https://github.com/user-attachments/assets/5d4bddec-87f7-4119-beb7-4a82a1728c68" />
+<img width="150" height="100" alt="imagen" src="https://github.com/user-attachments/assets/5c8da58f-157d-4298-b321-64cb12f9f0d3" />
+</p>
 
 Por otro lado si se busca ejecutar la calculadora es necesario poner el siguiente comando:
 
