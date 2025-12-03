@@ -331,6 +331,7 @@ Cabe aclarar que el uso y la implementacion fueron realizados en una FPGA lattic
 - Abrir una terminal en la carpeta asm y poner el siguiente comando
 
 ```
+  make clean
   make
 ```
 
@@ -339,6 +340,7 @@ Cabe aclarar que el uso y la implementacion fueron realizados en una FPGA lattic
 - si se busca simular basta con poner el comando 
 
 ```
+  make clean
   make sim_quark
 ```
 este genera una simulacion de una entrada desde consola, posterior a esto se abre una ventana en gtkwave para poder analizar todo como en la siguiente imagen:
@@ -348,5 +350,6 @@ este genera una simulacion de una entrada desde consola, posterior a esto se abr
 Por otro lado si se busca ejecutar la calculadora es necesario poner el siguiente comando:
 
 ```
+  make clean
   make configure_lattice
 ```
