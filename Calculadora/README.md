@@ -332,7 +332,6 @@ Cabe aclarar que el uso y la implementacion fueron realizados en una FPGA lattic
 
 ```
   make
-
 ```
 
 - a continuacion en la carpeta rtl hay dos posibilidades:
@@ -341,7 +340,6 @@ Cabe aclarar que el uso y la implementacion fueron realizados en una FPGA lattic
 
 ```
   make sim_quark
-
 ```
 este genera una simulacion de una entrada desde consola, posterior a esto se abre una ventana en gtkwave para poder analizar todo como en la siguiente imagen:
 
@@ -351,5 +349,4 @@ Por otro lado si se busca ejecutar la calculadora es necesario poner el siguient
 
 ```
   make
-
 ```
