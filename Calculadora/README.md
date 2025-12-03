@@ -301,7 +301,9 @@ Para visualizar en GTKWave, ejecutar en la terminal:
 gtkwave tb_Periferico_BinarioABCD.vcd &
 ```
 
-El testbench posee un número predeterminado de prueba que puede ser cambiado; se encuentra en la línea 107 de este mismo archivo.
+El testbench posee un número predeterminado de prueba que puede ser cambiado; se encuentra en la línea 107 de este mismo archivo. A continuacion se observan las señales mediante el uso de GTKwave
+
+<img width="1537" height="391" alt="imagen" src="https://github.com/user-attachments/assets/6249a998-d8bf-4cbe-873e-5b5a3c25ebd7" />
 
 #### Limitaciones y posibles mejoras
 
