@@ -313,6 +313,6 @@ Los siguientes archivos son necesarios para el correcto funcionamiento de una ca
 
 - `Makefile` — Este archivo se encarga de compilar todos los archivos .S y crear su respectivo .o para luego unir todos los archivos .o en un único archivo ejecutable RISC-V (firmware.elf)
   
-- `Makefile(rtl)` — Este archivo se encarga de unir todos los archivos .v en un archivo .SOC el cual va a la FPGA.
+- `Makefile( carpeta rtl)` — Este archivo se encarga de unir todos los archivos .v en un archivo .SOC el cual va a la FPGA.
   
 - `SOC.v` — El SOC ejecuta el programa RISC-V y conecta el CPU con los periféricos hardware que realizan las operaciones, este ejecuta el programa del ensamblador, proporciona el BUS que conecta el RAM con los periféricos, convierte direcciones del CPU en un chip-select al periférico, controla los periféricos, selecciona que periférico envia datos al CPU, proporciona una interfaz UART para hablar con la PC y finalmente integra en un único sistema funcional lo que permite correr la calculadora totalmente en hardware.
