@@ -155,7 +155,9 @@ Para visualizar en GTKWave, ejecutar en la terminal:
 gtkwave tb_Periferico_DIVISOR.vcd &
 ```
 
-El testbench posee dos números predeterminados de prueba que pueden ser cambiados; se encuentran en las líneas 101 y 102 de este mismo archivo.
+El testbench posee dos números predeterminados de prueba que pueden ser cambiados; se encuentran en las líneas 101 y 102 de este mismo archivo. A continuacion se observan las señales mediante el uso de GTKwave
+
+<img width="1639" height="327" alt="imagen" src="https://github.com/user-attachments/assets/dfe64f36-8a17-4f23-a3ea-22fe1ff48297" />
 
 #### Limitaciones y posibles mejoras
 
