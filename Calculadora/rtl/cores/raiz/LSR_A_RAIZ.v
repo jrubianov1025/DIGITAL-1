@@ -6,10 +6,10 @@ module LSR_A_RAIZ (
     input MSB,
     
     input [15:0] Op_A,    // número a evaluar
-    input [15:0] SUM_C2,  // Resultado de la resta en el diagrama se llama W_LDA2_in 
+    input [15:0] SUM_C2,  // Resultado de la resta en el diagrama se llama W_LDA2_in (cambie el nombre para entender mejor)
 
-    output reg [15:0] A_out    // Valor actual del registro A en el diagrama se llama W_LDA2_out
-);                              // comentarios puestos unica y exclusivamente por si alguno de mis compañeros se digna en revisar estos codigos
+    output reg [15:0] A_out    // Valor actual del registro A en el diagrama se llama W_LDA2_out (cambie el nombre para entender mejor)
+);                             
 
     reg [15:0] reg_TMP;  // registro temporal para manejar el desplazamiento conjunto
  
