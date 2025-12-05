@@ -1,11 +1,11 @@
-## 📘 Descripción de los módulos
+## 📘 Descripción general
 
-En esta carpeta se encuentran 2 carpetas principales, una contiene el ejemplo suministrado por el docente la cual contiene los módulos necesarios para proyectar una imagen estática de 12 bits por pixel en una pantalla led 64x64, y la otra carpeta corresponde a nuestro proyecto en donde en vez de proyectar una imágen estática proyectamos un video.
+En esta carpeta se encuentran 2 carpetas principales, una contiene el ejemplo suministrado por el docente la cual contiene los módulos necesarios para proyectar una imagen estática de 12 bits por pixel en una pantalla led RGB 64x64, la otra carpeta corresponde al proyecto principal desarrollado a lo largo del semestre, consiste en una modificacion buscando proyectar un video en la pantalla.
 
 
 ### 🖼️🔴🟢🔵 12 bits por pixel 
 
-Está carpeta contiene los módulos necesarios para proyectar una imagen estática en la pantalla led, junto con un archivo de imagen .hex en donde se encuentra la informaciòn de la imagen que se va a reproducir.
+Está carpeta contiene los módulos necesarios para proyectar una imagen estática en la pantalla led, junto con un archivo de imagen .hex en donde se encuentra la informaciòn de la imagen que se va a reproducir. Es el ejemplo suministrado por el docente.
 
 Se describe con más detalle el funcionamiento del módulo mediante el uso de 3 diagramas, Diagrama de flujo, Datapth y Diagrama de estados; a continuación se anexan estos 3 diagramas.
 
@@ -37,7 +37,8 @@ Dentro de la carpeta se encuentran los siguientes módulos:
 - `ctrl_lp4k.v` — Máquina de control del periférico. Genera señales de control para el correcto funcionamiento del periférico.
 
 - `comp.v` — Es un comparador utilizado para controlar el tiempo de exposiòn de cada bit de color.
-- `count.v` — Es un contador ascendente genérico, el cuál se instancia con parametros especificos para cada una de las necesidades, se utiliza para recorrer las filas y columnas, controlar cuánto tiempo se enciende el bit actual y manejar los niveles de brillo (bitplanes).
+- 
+- `count.v` — Es un contador ascendente, el cuál se instancia con parametros especificos para cada una de las necesidades, se utiliza para recorrer las filas y columnas, controlar cuánto tiempo se enciende el bit actual y manejar los niveles de brillo (bitplanes).
 
 - `lsr_led.v` — Este módulo genera el valor delay que se compara con el contador count_delay para controlar cuanto tiempo debe estar encendida la fila para cada bit de brillo.
 
@@ -50,6 +51,9 @@ Dentro de la carpeta se encuentran los siguientes módulos:
 Los siguientes archivos son necesarios para el correcto funcionamiento de la pantalla LED.
 
 - `Makefile` — Este archivo gestiona la compilación y simulación de los módulos necesarios para el funcionamiento de la pantalla.
+
+- `led_panel_4k.lpf` — Este archivo contiene el mapeo de pines para la fpga, sirve para poder trasmitir correctamente la informacion entre la fpga y el panel led.
+
 - `image.hex` — Este archivo contiene la información de la imagen que se quiere reproducir. 
 
 
