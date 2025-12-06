@@ -85,24 +85,23 @@ Dentro de la carpeta se encuentran los siguientes módulos:
 
 - `Comparador.v` — Es un comparador utilizado para controlar el tiempo de exposiòn de cada bit de color.
   
-- `Contador.v` — Es un contador ascendente genérico, el cuál se instancia con parametros especificos para cada una de las necesidades, se utiliza para recorrer las filas y columnas, controlar cuánto tiempo se enciende el bit actual y manejar los niveles de brillo (bitplanes).
+- `Contador.v` — Es un contador ascendente el cuál se instancia con parametros especificos para cada una de las necesidades, se utiliza para recorrer las filas y columnas, controlar cuánto tiempo se enciende el bit actual y manejar los niveles de brillo (bitplanes).
   
 - `Control_video.v` — Máquina de control del periférico. Genera señales de control para el correcto funcionamiento del periférico.
 
-- `Led_panel_video.v` — Módulo que funciona como el controlador principal para panel RGB basado en multiplexación y reproducción de video por frames.
-Este módulo sincroniza la lectura de memoria, la generación de clocks, el escaneo de filas/columnas y el envío de datos RGB hacia un panel LED.
+- `Led_panel_video.v` — Modulo top del programa que instancia todas las entradas y salidas del programa, genera un relog funcional con la pantalla e instancia el resto de modulos necesarios para su correcto funcionamiento.
 
-- `Lsr_led.v` — Este módulo, funciona como el registro de desplazamiento parametrizable para control de LEDs. Carga un valor inicial predefinido y luego lo desplaza hacia la izquierda en cada pulso negativo del reloj cuando la señal shift está habilitada.
+- `Lsr_led.v` — Este módulo genera el valor delay que se compara con el contador count_delay para controlar cuanto tiempo debe estar encendida la fila para cada bit de brillo.
 
-- `Multiplexor.v` — Este módulo implementa un multiplexor de 4 a 1 que selecciona, según el índice sel, un bit específico de cada uno de los seis canales de color provenientes de dos píxeles (RGB0 y RGB1).
+- `Multiplexor.v` — Este módulo implementa un multiplexor de 4 a 1 que selecciona un bit específico de cada uno de los seis canales de color provenientes de dos píxeles (RGB0 y RGB1).
 
-- `led_panel_video.lpf` — Este archivo define las restricciones físicas y temporales del diseño para la FPGA, asignando cada señal del módulo led_panel_video a un pin específico del dispositivo utilizado (Colorlight IV E: 5E-75A), configurando sus características eléctricas.
+- `led_panel_video.lpf` — Este archivo define las restricciones físicas y temporales del diseño para la FPGA, asignando cada señal del módulo led_panel_video a un pin específico del dispositivo utilizado (Colorlight IV E: 5E-75A).
 
 - `led_panel_video_pnr.log` — Este archivo muestra el uso de recursos de la FPGA cuando se está reproduciendo el video.
 
-- `memory_doble.v` — Este módulo implementa un sistema de doble buffer para almacenar los datos necesarios para reproducir el video. Está diseñado para permitir escritura y lectura simultánea en dos memorias separadas, evitando tearing y asegurando actualización fluida de cuadros en aplicaciones como paneles LED.
+- `memory_doble.v` — Este módulo implementa un sistema de doble memoria para almacenar los datos necesarios para reproducir el video. Está diseñado para permitir escritura y lectura simultánea en dos memorias separadas. de tal forma que se pueda escribir la siguiente imagen en una memoria que la pantalla no esta leyendo. cuando carga completamente y la maquina de control da la señal correcta se intercambia de memoria y se repite el proceso.
 
-- `memory_principal.v` — Este módulo implementa una memoria ROM cargada desde archivo, diseñada para almacenar una secuencia completa de imágenes o frames que serán reproducidos por el sistema de video del panel LED.
+- `memory_principal.v` — Este módulo implementa una memoria ROM cargada desde archivo, diseñada para almacenar una secuencia completa de imágenes o frames.
 
 - `video.hex` — Este archivo contiene un ejemplo de como queda la información de un video .gif en formato hexadecimal.
 
@@ -111,7 +110,7 @@ Este módulo sincroniza la lectura de memoria, la generación de clocks, el esca
 Si se quiere simular, basta con abrir una terminal en la carpeta Video y ejecutar el siguiente código:
 
 ```
-iverilog -o sim testbench.v Comparador.v Contador.v Control_video.v Led_panel_video.v Lsr_led.v Multiplexor.v memory_doble.v memory_principal.v
+iverilog -o sim tb_led_panel_video.v Led_panel_video.v Comparador.v Contador.v Control_video.v Lsr_led.v memory_doble.v memory_principal.v Multiplexor.v
 vvp sim
 ```
 
@@ -123,9 +122,9 @@ gtkwave tb_led_panel_video.vcd &
 
 Adicionalmente, dentro de la carpeta Video, se encuentra la carpeta image, en la cual hay dos archivos y dos carpetas más. Las carpetas contienen las frames que componen cada video, en formato .png. Por otro lado, se encuentran:
 
-- `video_to_hex.py` — Este código se encarga de convertir cada imagen en un arreglo RGB y genera un archivo video.hex donde cada línea contiene tres bytes obtenidos al empaquetar dos píxeles verticalmente alineados con sus canales reducidos a 4 bits.
+- `video_to_hex.py` — Este código se encarga de convertir cada imagen en un arreglo RGB y genera un archivo video.hex el cual se almacenara en el modulo `memory_principal.v`
   
-- `video.hex` —  Este archivo contiene la información necesaria para la reproducción del video en formato hexadecimal.
+- `video.hex` —  Este archivo contiene la información de cada una de las imagenes para la reproducción del video en formato hexadecimal.
   
 
 
