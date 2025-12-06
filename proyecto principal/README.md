@@ -125,9 +125,22 @@ Adicionalmente, dentro de la carpeta Video, se encuentra la carpeta image, en la
 - `video_to_hex.py` — Este código se encarga de convertir cada imagen en un arreglo RGB y genera un archivo video.hex el cual se almacenara en el modulo `memory_principal.v`
   
 - `video.hex` —  Este archivo contiene la información de cada una de las imagenes para la reproducción del video en formato hexadecimal.
-  
 
+### como sintetizar el proyecto
 
+Cabe aclarar que el uso y la implementacion fueron realizados en una FPGA lattice ECP5 mas especificamente una colorlight 5A-75E, para poder ejecutar la calculadora es necesario poner el siguiente comando:
+
+```
+  make clean
+  make configure_lattice
+```
+el procedimiento puede ser demorado por el uso excesivo de recursos de la fpga.
+
+#### Limitaciones y posibles mejoras
+
+La forma de el modulo `memory_principal.v` no permite el uso de videos largos (tamaño maximo de frames = 20), esto implica que solo podria reproducir gif sin problemas por lo que esta vastante limitado el proyecto en este punto. 
+
+se propuso como mejoras metodos de compresion de imagenes como RLE o el uso de la memoria SDRAM de la propia fpga, sin embargo por tiempos se descartaron y se adopta como opcion de mejora el uso de una memoria spiflash externa.
 
 
 
