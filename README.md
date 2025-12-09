@@ -32,3 +32,10 @@ Cristian Norbey Hernández Gualteros -CC 1001091723 - Grupo 8
 - `README.md` — Archivo de descripción principal.
 
 - [rubricas de auto y coevaluacion](./Coevaluacion_Autoevaluacion/)
+
+  ---
+## Funcionamiento del proyecto
+
+  https://youtube.com/shorts/qENOzlgcEgI?si=FvzNwo2QQbJie7j6
+
+
